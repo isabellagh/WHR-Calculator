@@ -1,14 +1,17 @@
-import './App.css';
+import React, { Component } from 'react';
+import Navbar from './components/layout/Navbar'
 import Form from './components/Form';
+import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Form />
-      <header className="App-header">
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Navbar title="WHR Calculator" icon="fas fa-heartbeat" />
+        <Form />        
+      </div>
+    )
+  }
 }
 
 export default App;
