@@ -1,9 +1,11 @@
 import React from 'react'
+import TextInput from './TextInput'
 
 class Form extends React.Component {
   render() {
     return( 
       <div>
+          <TextInput />
       </div>
     )
   }
