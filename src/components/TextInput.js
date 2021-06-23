@@ -4,7 +4,7 @@ class TextInput extends React.Component {
   render() {
     return (
       <div>
-        <label>Sample Label</label>
+        <label>Sample Label: </label>
         <input type="text" placeholder="Placeholder" />
       </div>
     );
