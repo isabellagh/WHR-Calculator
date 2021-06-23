@@ -7,10 +7,10 @@ class Form extends React.Component {
     return (
       <div>
         <div className="row">
-          <TextInput />
+          <TextInput label="Waist" placeholder="Enter your waist circumference" />
         </div>
         <div className="row">
-          <TextInput />
+          <TextInput label="Hip" placeholder="Enter your hip circumference" />
         </div>
       </div>
     );
@@ -18,3 +18,6 @@ class Form extends React.Component {
 }
 
 export default Form;
+
+
+// waist and hip circumference in cm or in
