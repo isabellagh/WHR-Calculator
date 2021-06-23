@@ -4,10 +4,4 @@ import "./index.css";
 import App from "./App";
 import Form from "./components/Form"
 
-ReactDOM.render(
-  <App />,
-
-  ReactDOM.render(<Form />, document.getElementById("root"))
-);
-
-
+ReactDOM.render(<App />, document.getElementById("root"));

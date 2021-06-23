@@ -11,4 +11,4 @@ class TextInput extends React.Component {
   }
 }
 
-export default TextInput;
+export default TextInput
