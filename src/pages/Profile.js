@@ -1,5 +1,10 @@
+import Navbar from "../components/layout/Navbar"
+
 const Profile = () => {
-    return <h1>Profile page</h1>
+    return (
+      <div>
+        <Navbar title="WHR Calculator" icon="fas fa-heartbeat" />
+      </div>)
 }
 
 export default Profile

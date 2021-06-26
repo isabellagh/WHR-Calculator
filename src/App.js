@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import Welcome from './pages/Welcome';
 import Profile from './pages/Profile';
+import Clients from './pages/Clients'
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,9 @@ class App extends Component {
         </Route>
         <Route path="/profile">
           <Profile />
+        </Route>
+        <Route path="/clients">
+          <Clients />
         </Route>
       </div>
     )
