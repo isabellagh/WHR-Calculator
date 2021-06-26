@@ -10,7 +10,7 @@ class Navbar extends Component {
               <i href='/profile' className={this.props.icon} /> {this.props.title}
             </li>
             <li>
-              
+              <a href='/signup'>Sign Up</a> 
             </li>
           </ul>
         </nav>
