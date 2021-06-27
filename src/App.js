@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Welcome from "./pages/Welcome";
 import Trainers from "./pages/Trainers";
@@ -16,6 +16,9 @@ class App extends Component {
         <Navbar title="WHR Calculator" icon="fas fa-heartbeat" />
         <main>
           <Switch>
+            <Route path="/" exact>
+              <Redirect to="/welcome" />
+            </Route>
             <Route path="/welcome">
               <Welcome />
             </Route>

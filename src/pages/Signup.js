@@ -2,7 +2,7 @@
 const signUp = () => {
   return (
     <div>
-      <h1>Sign up if you are a Trainer</h1>
+      <h1>Sign up as a Trainer</h1>
     </div>
   )
 }
