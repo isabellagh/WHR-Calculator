@@ -15,6 +15,9 @@ class Navbar extends Component {
               <NavLink activeClassName={classes.active} to='/trainers' className="text-right">Trainers</NavLink> 
             </li>
             <li>
+              <NavLink activeClassName={classes.active} to='/login' className="text-right">Log In</NavLink> 
+            </li>
+            <li>
               <NavLink activeClassName={classes.active} to='/signup' className="text-right">Sign Up</NavLink> 
             </li>
           </ul>
