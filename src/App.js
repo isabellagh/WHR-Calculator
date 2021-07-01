@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Welcome from "./pages/Welcome";
 import Trainers from "./pages/Trainers";
-import TrainerInfo from "./pages/TrainerInfo";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
@@ -17,32 +16,19 @@ class App extends Component {
       <div className="App">
         <Navbar title="WHR Calculator" icon="fas fa-heartbeat" />
         <main>
-          <Switch>
-            <Route path="/" exact>
-              <Redirect to="/welcome" />
-            </Route>
-            <Route path="/welcome">
-              <Welcome />
-            </Route>
-            <Route path="/trainers" exact>
-              <Trainers />
-            </Route>
-            <Route path="/trainers/:id">
-              <TrainerInfo />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/signup">
-              <Signup />
-            </Route>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            <Route path="/clients">
-              <Clients />
-            </Route>
-          </Switch>
+          <Route exact path="/" component={Welcome} />
+            
+          <Route exact path="/trainers" component={Trainers} />
+
+          <Route path="/trainers/:id" component={Trainers} />
+
+          <Route exact path="/login" component={Login} />
+
+          <Route exact path="/signup" component={Signup} />
+
+          <Route exact path="/profile" component={Profile} />
+
+          <Route exat path="/clients" component={Clients} />
         </main>
       </div>
     );
@@ -50,3 +36,5 @@ class App extends Component {
 }
 
 export default App;
+
+

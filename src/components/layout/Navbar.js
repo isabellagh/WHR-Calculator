@@ -9,7 +9,7 @@ class Navbar extends Component {
         <nav className={classes.header}>
           <ul>
             <li> 
-              <NavLink activeClassName={classes.active} to='/welcome' className={this.props.icon}> WHR Calculator</NavLink>
+              <NavLink activeClassName={classes.active} to='/' className={this.props.icon}> WHR Calculator</NavLink>
             </li>
             <li>
               <NavLink activeClassName={classes.active} to='/trainers' className="text-right">Trainers</NavLink> 
