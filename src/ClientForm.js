@@ -8,12 +8,12 @@ class ClientForm extends Component {
     clientAge: "",
     clientGender: "",
     clientEmail: "",
-    clientGoal: "",
     clientImage: "",
     clientWeight: "",
     clientHight: "",
     clientWaist: "",
-    clientHip: ""
+    clientHip: "",
+    clientGoal: ""
   };
 
   handleOnChange = (e) => {
@@ -39,6 +39,8 @@ class ClientForm extends Component {
     <Container className="p-3">
       <form onSubmit={this.handleSubmit}>
       <div className="mb-3">
+        <h1>Add a new client</h1>
+        <br />
         <label>Name:</label>
         <input type="text" placeholder="Example input placeholder" name="clientName" value={this.state.clientName} onChange={this.handleOnChange} />
         </div>
@@ -53,10 +55,6 @@ class ClientForm extends Component {
         <div className="mb-3">
         <label>Email:</label>
         <input type="text" name="clientEmail" value={this.state.clientEmail} onChange={this.handleOnChange} />
-        </div>
-        <div className="mb-3">
-        <label>Goal:</label>
-        <input type="text" name="clientGoal" value={this.state.clientGoal} onChange={this.handleOnChange} />
         </div>
         <div className="mb-3">
         <label>Image:</label>
@@ -79,7 +77,11 @@ class ClientForm extends Component {
         <input type="text" name="clientHip" value={this.state.clientHip} onChange={this.handleOnChange} />
         </div>
         <div className="mb-3">
-        <input type="submit" value="Add a new client" />
+        <label>Goal:</label>
+        <textarea type="text" name="clientGoal" value={this.state.clientGoal} onChange={this.handleOnChange} />
+        </div>
+        <div className="mb-3">
+        <input type="submit" value="Submit" />
         </div>
       </form>
       </Container>
