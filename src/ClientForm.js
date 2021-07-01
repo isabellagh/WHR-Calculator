@@ -1,8 +1,19 @@
 import React, { Component } from "react";
+import Container from 'react-bootstrap/Container';
+
 
 class ClientForm extends Component {
   state = {
     clientName: "",
+    clientAge: "",
+    clientGender: "",
+    clientEmail: "",
+    clientGoal: "",
+    clientImage: "",
+    clientWeight: "",
+    clientHight: "",
+    clientWaist: "",
+    clientHip: ""
   };
 
   handleOnChange = (e) => {
@@ -25,40 +36,53 @@ class ClientForm extends Component {
 
   render() {
     return (
+    <Container className="p-3">
       <form onSubmit={this.handleSubmit}>
+      <div className="mb-3">
         <label>Name:</label>
-        <input type="text" name="clientName" value={this.state.clientName} onChange={this.handleOnChange} />
-        <br />
+        <input type="text" placeholder="Example input placeholder" name="clientName" value={this.state.clientName} onChange={this.handleOnChange} />
+        </div>
+        <div className="mb-3">
         <label>Age:</label>
         <input type="text" name="clientAge" value={this.state.clientAge} onChange={this.handleOnChange} />
-        <br />
+        </div>
+        <div className="mb-3">
         <label>Gender:</label>
         <input type="text" name="clientGender" value={this.state.clientGender} onChange={this.handleOnChange} />
-        <br />
+        </div>
+        <div className="mb-3">
         <label>Email:</label>
         <input type="text" name="clientEmail" value={this.state.clientEmail} onChange={this.handleOnChange} />
-        <br />
+        </div>
+        <div className="mb-3">
         <label>Goal:</label>
         <input type="text" name="clientGoal" value={this.state.clientGoal} onChange={this.handleOnChange} />
-        <br />
+        </div>
+        <div className="mb-3">
         <label>Image:</label>
         <input type="text" name="clientImage" value={this.state.clientImage} onChange={this.handleOnChange} />
-        <br />
+        </div>
+        <div className="mb-3">
         <label>Weight:</label>
         <input type="text" name="clientWeight" value={this.state.clientWeight} onChange={this.handleOnChange} />
-        <br />
+        </div>
+        <div className="mb-3">
         <label>Height:</label>
         <input type="text" name="clientHeight" value={this.state.clientHeight} onChange={this.handleOnChange} />
-        <br />
+        </div>
+        <div className="mb-3">
         <label>Waist:</label>
         <input type="text" name="clientWaist" value={this.state.clientWaist} onChange={this.handleOnChange} />
-        <br />
+        </div>
+        <div className="mb-3">
         <label>Hip:</label>
         <input type="text" name="clientHip" value={this.state.clientHip} onChange={this.handleOnChange} />
-        <br />
-        
+        </div>
+        <div className="mb-3">
         <input type="submit" value="Add a new client" />
+        </div>
       </form>
+      </Container>
     );
   }
 }

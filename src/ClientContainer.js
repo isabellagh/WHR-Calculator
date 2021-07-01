@@ -13,7 +13,7 @@ class ClientContainer extends Component {
               {/* render the data from the form  */}
               <ClientForm handleAddClient={this.handleAddClient}/>   
               {this.props.clients.map(client => (
-                  <p>{client.clientName}</p>
+                  <p>{client.clientName} {client.clientAge}</p>
               ))}
           </div>
       )
