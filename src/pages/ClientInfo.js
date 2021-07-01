@@ -1,16 +1,16 @@
 import { useParams } from 'react-router-dom' //hook
 
-const TrainerInfo = () => {
+const ClientInfo = () => {
   const params = useParams()
 
   console.log(params.id);
 
     return (
         <section>
-            <h1>Trainer Info</h1>
-            <p>Trainer {params.id}</p>
+            <h1>Client Info</h1>
+            <p>Client {params.id}</p>
         </section>
     )
 }
 
-export default TrainerInfo
+export default ClientInfo

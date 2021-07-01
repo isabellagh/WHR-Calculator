@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
 import Clients from "./pages/Clients";
+import ClientInfo from "./pages/ClientInfo";
 import ClientNew from "./pages/ClientNew";
 import "./App.css";
 
@@ -34,6 +35,8 @@ class App extends Component {
           <Route exact path="/clients" component={Clients} />
 
           <Route exact path="/clients/new" component={ClientNew} />
+
+          <Route exact path="/clients/:id" component={ClientInfo} />
         </Switch>
         </main>
         
