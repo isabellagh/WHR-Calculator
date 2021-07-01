@@ -28,8 +28,9 @@ class App extends Component {
 
           <Route exact path="/profile" component={Profile} />
 
-          <Route exat path="/clients" component={Clients} />
+          <Route exat path="/clients" component={Clients}/>
         </main>
+        
       </div>
     );
   }

@@ -1,9 +1,9 @@
-import Navbar from "../components/layout/Navbar"
+import ClientContainer from "../ClientContainer"
 
 const Clients = () => {
   return (
     <div>
-      <Navbar title="WHR Calculator" icon="fas fa-heartbeat" />
+      <ClientContainer />
     </div>
   )
 }
