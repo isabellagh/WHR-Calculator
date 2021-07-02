@@ -4,7 +4,7 @@ import Navbar from "./components/layout/Navbar";
 import Welcome from "./pages/Welcome";
 import Trainers from "./pages/Trainers";
 import TrainerInfo from "./pages/TrainerInfo";
-import Login from "./pages/Login";
+import Login from "./components/auth/Login";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
 import Clients from "./pages/Clients";

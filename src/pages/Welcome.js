@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Form from "../components/Form"
 import Registration from "../components/auth/Registration";
+import Login from "../components/auth/Login";
 
 class Welcome extends Component {
   constructor(props) {
@@ -18,7 +19,8 @@ class Welcome extends Component {
       <div>
         <h1>Welcome</h1>
         <h1>Status: {this.props.loggedInStatus}</h1>
-        <Registration handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+        <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} />
+        <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
         <Form />
       </div>
         
