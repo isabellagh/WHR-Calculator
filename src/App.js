@@ -13,6 +13,22 @@ import ClientNew from "./pages/ClientNew";
 import "./App.css";
 
 class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      loggedInStatus: "NOT_LOGGED_IN",
+      user: {}
+    }
+    this.handleLogin = this.handleLogin.bind(this)
+  }
+
+  handleLogin(data) {
+    this.setState({
+      loggedInStatus: "LOGGED_IN",
+      user: data.user
+    })
+  }
   
   render() {
     return (
@@ -20,8 +36,22 @@ class App extends Component {
         <Navbar title="WHR Calculator" icon="fas fa-heartbeat" />
         <main>
         <Switch>
-          <Route exact path="/" component={Welcome} />
-            
+          <Route 
+            exact 
+            path="/" 
+            render={props => ( 
+              <Welcome { ...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />
+            )}
+          />
+
+          <Route 
+            exact 
+            path="/profile" 
+            render={props => ( 
+              <Profile { ...props} loggedInStatus={this.state.loggedInStatus} />
+            )} 
+            />
+
           <Route exact path="/trainers" component={Trainers} />
 
           <Route exact path="/trainers/:id" component={TrainerInfo} />
@@ -29,8 +59,6 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
 
           <Route exact path="/signup" component={Signup} />
-
-          <Route exact path="/profile" component={Profile} />
 
           <Route exact path="/clients" component={Clients} />
 

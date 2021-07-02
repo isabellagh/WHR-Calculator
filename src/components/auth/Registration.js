@@ -8,7 +8,7 @@ export class Registration extends Component {
       email: "",
       password: "",
       password_confirmation: "",
-      registrationErrors: "",
+      registrationErrors: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,9 +32,13 @@ export class Registration extends Component {
         }
     },
     { withCredentials: true }
-    ).then(response => {
-        console.log("registration res", response);
-    }).catch(error => {
+    )
+    .then(response => {
+        if (response.data.status === 'created') {
+            this.props.handleSuccessfulAuth(response.data)
+        }
+    })
+    .catch(error => {
         console.log("registration error", error);
     })
     event.preventDefault();
