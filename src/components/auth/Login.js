@@ -12,6 +12,18 @@ export class Login extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+
+    this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this)
+  }
+
+  // constructor(props) {
+  //   super(props);
+  //   this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this)
+  // }
+  
+  handleSuccessfulAuth(data) {
+    this.props.handleLogin(data)
+    this.props.history.push("/profile")
   }
 
   handleChange(event) {
@@ -23,13 +35,13 @@ export class Login extends Component {
   handleSubmit(event) {
     const {email, password} = this.state
 
-    axios.post("http://localhost:3001/sessions", {
+    axios.post("http://localhost:3000/sessions", {
         user: {
             email: email,
             password: password
         }
     },
-    { withCredentials: true }
+    
     )
     .then(response => {
         if (response.data.logged_in) {
@@ -45,6 +57,7 @@ export class Login extends Component {
   render() {
     return (
       <div>
+        <h1>Status: {this.props.loggedInStatus}</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             type="email"
