@@ -1,9 +1,12 @@
-import { Link } from 'react-router-dom'
+import React from 'react'
+// import { Link } from 'react-router-dom'
 
-const Clients = () => {
+const Clients = ({ clients }) => {  //like props
+  const clientsJSX = clients.map(client => <p key={client.id}>{client.name}</p>)
   return (
-    <section>
-      <h1> Here are all your clients: </h1>
+    <div className="Clients">
+      {clientsJSX}
+      {/* <h1> Here are all your clients: </h1>
       <br />
         <ul>
           <li>
@@ -17,8 +20,8 @@ const Clients = () => {
           </li>
           <br />
         <button><Link to='/clients/new'>Add a new client</Link></button>
-        </ul>
-      </section>
+        </ul> */}
+      </div>
   )
 }
 

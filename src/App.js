@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 // import Logout from "./pages/Logout";
 // import Signup from "./pages/Signup";
 // import Profile from "./pages/Profile";
-// import Clients from "./pages/Clients";
+import Clients from "./pages/Clients";
 // import ClientInfo from "./pages/ClientInfo";
 // import ClientNew from "./pages/ClientNew";
 // import "./App.css";
@@ -21,8 +21,8 @@ class App extends Component {
       loginForm: {
         email: "",
         password: ""
-      }
-      // clients: []
+      },
+      clients: []
     }
   }
 
@@ -128,18 +128,36 @@ class App extends Component {
   //   })
   //   .catch(console.log)
   // }
+
+  getClients = () => {
+    fetch("http://localhost:3000/clients")
+      .then(response => response.json())
+      .then(clients => {
+        if (clients.error) {
+          alert("not authorized")
+        } else {
+          this.setState({
+            clients
+          })
+        }
+      })
+      .catch(console.log)
+  }
   
   render() {
-    // const { currentUser } = this.state
+    const { currentUser } = this.state
     return (
       <div className="App">
         <Navbar title="WHR Calculator" icon="fas fa-heartbeat" />
+        <h2>{ currentUser ? `Logged in as ${currentUser.name}` : "Not logged in"}</h2>
         <Login
           handleLoginFormChange={this.handleLoginFormChange}
           handleLoginFormSubmit={this.handleLoginFormSubmit}
           email={this.state.loginForm.email}
           password={this.state.loginForm.password}
           />
+        <button onClick={this.getClients}>My clients</button>
+          <Clients clients={this.state.clients} />
         {/* <main>
         <Switch>
           <Route exact path="/" component={Welcome} />
