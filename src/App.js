@@ -5,7 +5,7 @@ import Navbar from "./components/layout/Navbar";
 // import Trainers from "./pages/Trainers";
 // import TrainerInfo from "./pages/TrainerInfo";
 import Login from "./pages/Login";
-// import Logout from "./pages/Logout";
+import Logout from "./pages/Logout";
 // import Signup from "./pages/Signup";
 // import Profile from "./pages/Profile";
 import Clients from "./pages/Clients";
@@ -15,22 +15,43 @@ import Clients from "./pages/Clients";
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       currentUser: null,
       loginForm: {
         email: "",
-        password: ""
+        password: "",
       },
-      clients: []
-    }
+      clients: [],
+    };
   }
 
+  componentDidMount() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch("http://localhost:3001/get_current_user", {
+        headers: {
+          Authorization: token,
+        },
+      })
+        .then((response) => response.json())
+        .then((resp) => {
+          if (resp.error) {
+            alert(resp.error);
+          } else {
+            this.setState({
+              currentUser: resp.user,
+            });
+          }
+        })
+        .catch(console.log);
+    }
+  }
   // componentDidMount() {
-  //   const token = localStorage.getItem("token")
-  //   if (token) {
+  //
+  //
   //     fetch("http://localhost:3001/get_current_user", {
-  //       credentials: "include", 
+  //       credentials: "include",
   //       headers: {
   //         "Content-Type": "application/json"
   //       }
@@ -49,49 +70,54 @@ class App extends Component {
   //   }
   // }
 
-  handleLoginFormChange = event => {
-    const { name, value } = event.target
+  handleLoginFormChange = (event) => {
+    const { name, value } = event.target;
     this.setState({
       loginForm: {
         ...this.state.loginForm,
-        [name]: value
-      }
-    })
-  }
+        [name]: value,
+      },
+    });
+  };
 
-  handleLoginFormSubmit = event => {
-    event.preventDefault()
-    const userInfo = this.state.loginForm
+  handleLoginFormSubmit = (event) => {
+    event.preventDefault();
+    const userInfo = this.state.loginForm;
     const headers = {
       method: "POST",
-    //   credentials: "include",
+      //   credentials: "include",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user: userInfo
+        user: userInfo,
+      }),
+    };
+    fetch("http://localhost:3000/login", headers)
+      .then((response) => response.json())
+      .then((resp) => {
+        if (resp.error) {
+          alert("Invalid credentials");
+        } else {
+          this.setState({
+            currentUser: resp,
+              loginForm: {
+                email: "",
+                password: ""
+              }
+          });
+        }
       })
-    }
-     fetch("http://localhost:3000/login", headers)
-      .then(response => response.json())
-      .then(resp => {
-      if (resp.error) {
-        alert("Invalid credentials")
-      } else {
-        this.setState({
-          currentUser: resp
-  //         loginForm: {
-  //           email: "",
-  //           password: ""
-  //         }
-        })
-      }
+      .catch(console.log);
+  };
+
+  logout = (event) => {
+    event.preventDefault()
+    localStorage.removeItem("token")
+    this.setState({
+      currentUser: null,
+      clients: []
     })
-      .catch(console.log)
-      
-  }
-  
-  // logout = event => {
   //   event.preventDefault()
   //   fetch("http://localhost:3001/logout", {
   //     crendetials: "include",
@@ -106,7 +132,7 @@ class App extends Component {
   //     currentUser: null,
   //     secrets: []
   //   })
-  // }
+  }
 
   // getSecrets = () => {
   //   const token = localStorage.getItem("token")
@@ -131,33 +157,40 @@ class App extends Component {
 
   getClients = () => {
     fetch("http://localhost:3000/clients")
-      .then(response => response.json())
-      .then(clients => {
+      .then((response) => response.json())
+      .then((clients) => {
         if (clients.error) {
-          alert("not authorized")
+          alert("not authorized");
         } else {
           this.setState({
-            clients
-          })
+            clients,
+          });
         }
       })
-      .catch(console.log)
-  }
-  
+      .catch(console.log);
+  };
+
   render() {
     const { currentUser } = this.state
     return (
       <div className="App">
         <Navbar title="WHR Calculator" icon="fas fa-heartbeat" />
-        <h2>{ currentUser ? `Logged in as ${currentUser.name}` : "Not logged in"}</h2>
-        <Login
-          handleLoginFormChange={this.handleLoginFormChange}
-          handleLoginFormSubmit={this.handleLoginFormSubmit}
-          email={this.state.loginForm.email}
-          password={this.state.loginForm.password}
+        <h2>
+          {currentUser ? `Logged in as ${currentUser.name}` : "Not logged in"}
+        </h2>
+
+        {this.state.currentUser ? (
+          <Logout logout={this.logout}/>
+        ) : (
+          <Login
+            handleLoginFormChange={this.handleLoginFormChange}
+            handleLoginFormSubmit={this.handleLoginFormSubmit}
+            email={this.state.loginForm.email}
+            password={this.state.loginForm.password}
           />
+        )}
         <button onClick={this.getClients}>My clients</button>
-          <Clients clients={this.state.clients} />
+        <Clients clients={this.state.clients} />
         {/* <main>
         <Switch>
           <Route exact path="/" component={Welcome} />
@@ -179,12 +212,9 @@ class App extends Component {
           <Route exact path="/clients/:id" component={ClientInfo} />
         </Switch>
         </main> */}
-        
       </div>
     );
   }
 }
 
 export default App;
-
-
