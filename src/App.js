@@ -27,11 +27,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const token = localStorage.getItem("token");
-    if (token) {
-      fetch("http://localhost:3001/get_current_user", {
+      fetch("http://localhost:3000/get_current_user", {
+        credentials: "include",
         headers: {
-          Authorization: token,
+          "Content-Type": "application/json"
         },
       })
         .then((response) => response.json())
@@ -45,30 +44,8 @@ class App extends Component {
           }
         })
         .catch(console.log);
-    }
   }
-  // componentDidMount() {
-  //
-  //
-  //     fetch("http://localhost:3001/get_current_user", {
-  //       credentials: "include",
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       }
-  //     })
-  //     .then(response => response.json())
-  //     .then(resp => {
-  //       if (resp.error) {
-  //         alert(resp.error)
-  //       } else {
-  //         this.setState({
-  //           currentUser: resp.user
-  //         })
-  //       }
-  //     })
-  //     .catch(console.log)
-  //   }
-  // }
+
 
   handleLoginFormChange = (event) => {
     const { name, value } = event.target;
@@ -80,18 +57,19 @@ class App extends Component {
     });
   };
 
+
   handleLoginFormSubmit = (event) => {
     event.preventDefault();
     const userInfo = this.state.loginForm;
     const headers = {
       method: "POST",
-      //   credentials: "include",
+        credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user: userInfo,
-      }),
+        user: userInfo
+      })
     };
     fetch("http://localhost:3000/login", headers)
       .then((response) => response.json())
@@ -100,7 +78,7 @@ class App extends Component {
           alert("Invalid credentials");
         } else {
           this.setState({
-            currentUser: resp,
+            currentUser: resp.user,
               loginForm: {
                 email: "",
                 password: ""
@@ -113,50 +91,29 @@ class App extends Component {
 
   logout = (event) => {
     event.preventDefault()
-    localStorage.removeItem("token")
+    fetch("http://localhost:3000/logout", {
+      credentials: "include",
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => response.json())
+    .then(resp => alert(resp.message))
     this.setState({
       currentUser: null,
       clients: []
     })
-  //   event.preventDefault()
-  //   fetch("http://localhost:3001/logout", {
-  //     crendetials: "include",
-  //     headers: {
-  //       method: "DELETE",
-  //       "Content-Type": "aaplication/json"
-  //     }
-  //   })
-  //   .then(response => response.json())
-  //   .then(console.log)
-  //   this.setState({
-  //     currentUser: null,
-  //     secrets: []
-  //   })
   }
 
-  // getSecrets = () => {
-  //   const token = localStorage.getItem("token")
-  //   fetch("http://localhost:3001/secrets", {
-  //     credentials: "include",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     }
-  //   })
-  //   .then(response => response.json())
-  //   .then(secrets => {
-  //     if (secrets.error) {
-  //       alert("Not authorized for those secrets")
-  //     } else {
-  //       this.setState({
-  //         secrets
-  //       })
-  //     }
-  //   })
-  //   .catch(console.log)
-  // }
 
   getClients = () => {
-    fetch("http://localhost:3000/clients")
+    fetch("http://localhost:3000/clients", {
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
       .then((response) => response.json())
       .then((clients) => {
         if (clients.error) {
