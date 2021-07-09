@@ -1,18 +1,22 @@
-import React from "react"
+import React from 'react'
 import { connect } from 'react-redux'
 import { logout } from '../actions/currentUser'
 
 const Logout = ({ logout }) => {
+    
+    // const handleSubmit = event => {
+        
+    // }
+
     return (
-      <div className="Logout">
         <form onSubmit={logout}>
-        <input
+          <input
           type="submit"
           value="Log Out"
-        />
+          />
         </form>
-      </div>
     )
-  }
-  
-  export default connect(null, { logout } )(Logout)
+}
+
+
+export default connect(null, { logout } )(Logout)

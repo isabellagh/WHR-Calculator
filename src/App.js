@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Login from './components/Login'
+import Logout from './components/Logout'
 // import Welcome from "./pages/Welcome";
 // import Trainers from "./pages/Trainers";
 // import TrainerInfo from "./pages/TrainerInfo";
@@ -33,48 +34,7 @@ class App extends Component {
   }
 
 
-  // handleLoginFormChange = (event) => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     loginForm: {
-  //       ...this.state.loginForm,
-  //       [name]: value,
-  //     },
-  //   });
-  // };
-
-
-  // handleLoginFormSubmit = (event) => {
-  //   event.preventDefault();
-  //   const userInfo = this.state.loginForm;
-  //   const headers = {
-  //     method: "POST",
-  //       credentials: "include",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       user: userInfo
-  //     })
-  //   };
-  //   fetch("http://localhost:3000/login", headers)
-  //     .then((response) => response.json())
-  //     .then((resp) => {
-  //       if (resp.error) {
-  //         alert("Invalid credentials");
-  //       } else {
-  //         this.setState({
-  //           currentUser: resp.user,
-  //             loginForm: {
-  //               email: "",
-  //               password: ""
-  //             }
-  //         });
-  //       }
-  //     })
-  //     .catch(console.log);
-  // };
-
+ 
   // logout = (event) => {
   //   event.preventDefault()
   //   fetch("http://localhost:3000/logout", {
@@ -119,16 +79,24 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar title="WHR Calculator" icon="fas fa-heartbeat" />
-        <Login />
+        {/* <Login /> */}
+        {/* <Logout /> */}
+        {this.props.currentUser ? <Logout /> : <Login />}
+
         {/* <h2>
           {currentUser ? `Logged in as ${currentUser.name}` : "Not logged in"}
-        </h2> */}
+        </h2>
+
+        {currentUser ? (
+          <Logout logout={this.logout}/>
+        ) : (
+          <Login />)} */}
 
         {/* {currentUser ? (
           <Logout logout={this.logout}/>
         ) : (
           <Login
-            handleLoginFormChange={this.handleLoginFormChange}
+            /*{/*handleLoginFormChange={this.handleLoginFormChange}
             handleLoginFormSubmit={this.handleLoginFormSubmit}
             email={this.state.loginForm.email}
             password={this.state.loginForm.password}
@@ -157,18 +125,19 @@ class App extends Component {
           <Route exact path="/clients/:id" component={ClientInfo} />
         </Switch>
         </main> */}
+        
       </div>
     );
   } 
 
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     currentUser: state.currentUser
-//   }
-// } 
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser
+  }
+} 
 
 // export default connect(mapStateToProps, { getCurrentUser: getCurrentUser })(App);
 
-export default connect(null, { getCurrentUser })(App)
+export default connect(mapStateToProps, { getCurrentUser })(App)
