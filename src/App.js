@@ -1,142 +1,130 @@
 import React, { Component } from "react";
 // import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
+import Login from './components/Login'
 // import Welcome from "./pages/Welcome";
 // import Trainers from "./pages/Trainers";
 // import TrainerInfo from "./pages/TrainerInfo";
-import Login from "./pages/Login";
-import Logout from "./pages/Logout";
+// import Login from "./pages/Login";
+// import Logout from "./pages/Logout";
 // import Signup from "./pages/Signup";
 // import Profile from "./pages/Profile";
-import Clients from "./pages/Clients";
+// import Clients from "./pages/Clients";
 // import ClientInfo from "./pages/ClientInfo";
 // import ClientNew from "./pages/ClientNew";
 // import "./App.css";
+import { connect } from 'react-redux'
+import { getCurrentUser } from './actions/currentUser';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentUser: null,
-      loginForm: {
-        email: "",
-        password: "",
-      },
-      clients: [],
-    };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     loginForm: {
+  //       email: "",
+  //       password: "",
+  //     },
+  //     clients: []
+  //   };
+  // }
 
   componentDidMount() {
-      fetch("http://localhost:3000/get_current_user", {
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json"
-        },
-      })
-        .then((response) => response.json())
-        .then((resp) => {
-          if (resp.error) {
-            alert(resp.error);
-          } else {
-            this.setState({
-              currentUser: resp.user,
-            });
-          }
-        })
-        .catch(console.log);
+    this.props.getCurrentUser()
   }
 
 
-  handleLoginFormChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({
-      loginForm: {
-        ...this.state.loginForm,
-        [name]: value,
-      },
-    });
-  };
+  // handleLoginFormChange = (event) => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     loginForm: {
+  //       ...this.state.loginForm,
+  //       [name]: value,
+  //     },
+  //   });
+  // };
 
 
-  handleLoginFormSubmit = (event) => {
-    event.preventDefault();
-    const userInfo = this.state.loginForm;
-    const headers = {
-      method: "POST",
-        credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user: userInfo
-      })
-    };
-    fetch("http://localhost:3000/login", headers)
-      .then((response) => response.json())
-      .then((resp) => {
-        if (resp.error) {
-          alert("Invalid credentials");
-        } else {
-          this.setState({
-            currentUser: resp.user,
-              loginForm: {
-                email: "",
-                password: ""
-              }
-          });
-        }
-      })
-      .catch(console.log);
-  };
+  // handleLoginFormSubmit = (event) => {
+  //   event.preventDefault();
+  //   const userInfo = this.state.loginForm;
+  //   const headers = {
+  //     method: "POST",
+  //       credentials: "include",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       user: userInfo
+  //     })
+  //   };
+  //   fetch("http://localhost:3000/login", headers)
+  //     .then((response) => response.json())
+  //     .then((resp) => {
+  //       if (resp.error) {
+  //         alert("Invalid credentials");
+  //       } else {
+  //         this.setState({
+  //           currentUser: resp.user,
+  //             loginForm: {
+  //               email: "",
+  //               password: ""
+  //             }
+  //         });
+  //       }
+  //     })
+  //     .catch(console.log);
+  // };
 
-  logout = (event) => {
-    event.preventDefault()
-    fetch("http://localhost:3000/logout", {
-      credentials: "include",
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .then(response => response.json())
-    .then(resp => alert(resp.message))
-    this.setState({
-      currentUser: null,
-      clients: []
-    })
-  }
+  // logout = (event) => {
+  //   event.preventDefault()
+  //   fetch("http://localhost:3000/logout", {
+  //     credentials: "include",
+  //     method: "DELETE",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //   .then(response => response.json())
+  //   .then(resp => alert(resp.message))
+  //   this.setState({
+  //     currentUser: null,
+  //     clients: []
+  //   })
+  // }
 
 
-  getClients = () => {
-    fetch("http://localhost:3000/clients", {
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-      .then((response) => response.json())
-      .then((clients) => {
-        if (clients.error) {
-          alert("not authorized");
-        } else {
-          this.setState({
-            clients,
-          });
-        }
-      })
-      .catch(console.log);
-  };
+  // getClients = () => {
+  //   fetch("http://localhost:3000/clients", {
+  //     credentials: "include",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //     .then((response) => response.json())
+  //     .then((clients) => {
+  //       if (clients.error) {
+  //         alert("not authorized");
+  //       } else {
+  //         this.setState({
+  //           clients,
+  //         });
+  //       }
+  //     })
+  //     .catch(console.log);
+  // };
+
 
   render() {
-    const { currentUser } = this.state
+    // const { currentUser } = this.props
     return (
       <div className="App">
         <Navbar title="WHR Calculator" icon="fas fa-heartbeat" />
-        <h2>
+        <Login />
+        {/* <h2>
           {currentUser ? `Logged in as ${currentUser.name}` : "Not logged in"}
-        </h2>
+        </h2> */}
 
-        {this.state.currentUser ? (
+        {/* {currentUser ? (
           <Logout logout={this.logout}/>
         ) : (
           <Login
@@ -147,7 +135,7 @@ class App extends Component {
           />
         )}
         <button onClick={this.getClients}>My clients</button>
-        <Clients clients={this.state.clients} />
+        <Clients clients={this.state.clients} /> */}
         {/* <main>
         <Switch>
           <Route exact path="/" component={Welcome} />
@@ -171,7 +159,16 @@ class App extends Component {
         </main> */}
       </div>
     );
-  }
+  } 
+
 }
 
-export default App;
+// const mapStateToProps = state => {
+//   return {
+//     currentUser: state.currentUser
+//   }
+// } 
+
+// export default connect(mapStateToProps, { getCurrentUser: getCurrentUser })(App);
+
+export default connect(null, { getCurrentUser })(App)
