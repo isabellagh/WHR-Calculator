@@ -1,3 +1,8 @@
+import { getMyClients } from "./myClients"
+import { clearLoginForm } from "./loginForm"
+import { clearSignupForm } from "./signupForm"
+
+
 // sync action creators
 export const setCurrentUser = user => {
     return {
@@ -16,6 +21,35 @@ export const clearCurrentUser = () => {
 
 // async action creators
 
+export const signup = credentials => {
+    return dispatch => {
+        const userInfo = {
+            user: credentials
+        }
+        return fetch("http://localhost:3000/api/v1/signup", {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userInfo)
+        })
+        .then(response => response.json())
+        .then(resp => {
+            if (resp.error) {
+                alert(resp.error)
+            } else {
+                dispatch(setCurrentUser(resp.data))
+                dispatch(getMyClients())
+                dispatch(clearSignupForm())
+            }
+        })
+        .catch(console.log)
+    }
+}
+
+
+
 export const login = credentials => {
     return dispatch => {
         return fetch("http://localhost:3000/api/v1/login", {
@@ -27,11 +61,13 @@ export const login = credentials => {
             body: JSON.stringify(credentials)
         })
         .then(response => response.json())
-        .then(user => {
-            if (user.error) {
-                alert(user.error)
+        .then(resp => {
+            if (resp.error) {
+                alert(resp.error)
             } else {
-                dispatch(setCurrentUser(user))
+                dispatch(setCurrentUser(resp.data))
+                dispatch(getMyClients())
+                dispatch(clearLoginForm())
             }
         })
         .catch(console.log)
@@ -60,11 +96,13 @@ export const getCurrentUser = () => {
             },
         })
         .then(response => response.json())
-        .then(user => {
-            if (user.error) {
-                alert(user.error)
+        .then(resp => {
+            if (resp.error) {
+                alert(resp.error)
             } else {
-                dispatch(setCurrentUser(user))
+                dispatch(setCurrentUser(resp.data))
+                dispatch(getMyClients())
+                
             }
         })
         .catch(console.log)

@@ -29,7 +29,6 @@ const Login = ({ loginFormData, updateLoginForm, login }) => {
           onChange={handleInputChange}
           
           />
-          <br />
           <input
           type="password"
           name="password"
@@ -38,7 +37,6 @@ const Login = ({ loginFormData, updateLoginForm, login }) => {
           onChange={handleInputChange}
           
           />
-          <br />
           <input
           type="submit"
           value="Log In"

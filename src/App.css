@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 /* Global Styles */
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  color: blue;
+}
+
+
 :root {
   --primary-color: #dc3545;
   --dark-color: #333333;
@@ -412,3 +420,4 @@ table th {
     justify-content: center;
   }
 }
+
