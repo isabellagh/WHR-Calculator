@@ -21,7 +21,7 @@ export const clearCurrentUser = () => {
 
 // async action creators
 
-export const signup = credentials => {
+export const signup = (credentials, history) => {
     return dispatch => {
         const userInfo = {
             user: credentials
@@ -42,6 +42,7 @@ export const signup = credentials => {
                 dispatch(setCurrentUser(resp.data))
                 dispatch(getMyClients())
                 dispatch(clearSignupForm())
+                history.push('/')
             }
         })
         .catch(console.log)
@@ -50,7 +51,7 @@ export const signup = credentials => {
 
 
 
-export const login = credentials => {
+export const login = (credentials, history) => {
     return dispatch => {
         return fetch("http://localhost:3000/api/v1/login", {
             credentials: "include",
@@ -68,6 +69,7 @@ export const login = credentials => {
                 dispatch(setCurrentUser(resp.data))
                 dispatch(getMyClients())
                 dispatch(clearLoginForm())
+                history.push('/')
             }
         })
         .catch(console.log)
@@ -82,6 +84,7 @@ export const logout = () => {
             method: "DELETE"
         })
         .then(() => dispatch({type: "CLEAR_LOGIN_FORM"}))
+        
     }
 
 }
