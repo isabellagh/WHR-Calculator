@@ -14,11 +14,6 @@ const UserNavBar = ({ currentUser, loggedIn }) => {
             <NavLink activeClassName={classes.active} to='/clients'>
               My Clients
             </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName={classes.active} to='/clients/new'>
-              New Client
-            </NavLink>
           </li> */}
           <li>
           <NavLink to='/propfile' render={(props) => loggedIn ? <Profile {...props}/> : <Welcome {...props} />}/>
@@ -33,6 +28,11 @@ const UserNavBar = ({ currentUser, loggedIn }) => {
               My clients
             </NavLink>
           </li>
+          <li>
+            <NavLink activeClassName={classes.active} to='/clients/new'>
+              New Client
+            </NavLink>
+          </li> 
           <li>
             <NavLink activeClassName={classes.active} to='/trainers'>
               Trainers

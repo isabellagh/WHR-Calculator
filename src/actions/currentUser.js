@@ -38,7 +38,7 @@ export const signup = (credentials, history) => {
                 alert(resp.error)
             } else {
                 dispatch(setCurrentUser(resp.data))
-                dispatch(getMyClients())
+                // dispatch(getMyClients())
                 dispatch(clearSignupForm())
                 history.push('/profile')
             }
@@ -65,7 +65,7 @@ export const login = (credentials, history) => {
                 alert(resp.error)
             } else {
                 dispatch(setCurrentUser(resp.data))
-                dispatch(getMyClients())
+                // dispatch(getMyClients())
                 dispatch(clearLoginForm())
                 history.push('/profile')
             }
@@ -77,7 +77,7 @@ export const login = (credentials, history) => {
 export const logout = () => {
     return dispatch => {
         dispatch(clearCurrentUser())
-        dispatch(clearClients())
+        // dispatch(clearClients())
         return fetch('http://localhost:3000/api/v1/logout', {
             credentials: "include",
             method: "DELETE"

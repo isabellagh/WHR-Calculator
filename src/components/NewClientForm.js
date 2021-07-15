@@ -101,13 +101,3 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, { updateNewClientForm })(NewClientForm);
 
-// t.string "name"
-//     t.integer "age"
-//     t.string "gender"
-//     t.string "email"
-//     t.string "goal"
-//     t.string "image"
-//     t.integer "weight"
-//     t.integer "height"
-//     t.integer "waist"
-//     t.integer "hip"

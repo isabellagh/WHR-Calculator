@@ -16,6 +16,8 @@ import { connect } from 'react-redux'
 // import MainContainer from './components/MainContainer'
 import { getCurrentUser } from './actions/currentUser';
 import UserNavBar from "./components/UserNavBar";
+// import NewClientForm from './NewClientForm'
+
 
 class App extends Component {
 
