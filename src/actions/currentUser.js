@@ -1,4 +1,4 @@
-import { getMyClients } from "./myClients"
+import { getMyClients, clearClients } from "./myClients"
 import { clearLoginForm } from "./loginForm"
 import { clearSignupForm } from "./signupForm"
 
@@ -16,8 +16,6 @@ export const clearCurrentUser = () => {
         type: "CLEAR_CURRENT_USER"
     }
 }
-
-
 
 // async action creators
 
@@ -42,7 +40,7 @@ export const signup = (credentials, history) => {
                 dispatch(setCurrentUser(resp.data))
                 dispatch(getMyClients())
                 dispatch(clearSignupForm())
-                history.push('/')
+                history.push('/profile')
             }
         })
         .catch(console.log)
@@ -69,7 +67,7 @@ export const login = (credentials, history) => {
                 dispatch(setCurrentUser(resp.data))
                 dispatch(getMyClients())
                 dispatch(clearLoginForm())
-                history.push('/')
+                history.push('/profile')
             }
         })
         .catch(console.log)
@@ -79,14 +77,13 @@ export const login = (credentials, history) => {
 export const logout = () => {
     return dispatch => {
         dispatch(clearCurrentUser())
+        dispatch(clearClients())
         return fetch('http://localhost:3000/api/v1/logout', {
             credentials: "include",
             method: "DELETE"
         })
-        .then(() => dispatch({type: "CLEAR_LOGIN_FORM"}))
-        
+        // .then(() => dispatch({type: "CLEAR_LOGIN_FORM"}))
     }
-
 }
 
 export const getCurrentUser = () => {
@@ -101,7 +98,7 @@ export const getCurrentUser = () => {
         .then(response => response.json())
         .then(resp => {
             if (resp.error) {
-                alert(resp.error)
+                // alert(resp.error)
             } else {
                 dispatch(setCurrentUser(resp.data))
                 dispatch(getMyClients())

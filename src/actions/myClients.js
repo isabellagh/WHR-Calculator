@@ -5,6 +5,11 @@ export const setMyClients = clients => {
     }
 }
 
+export const clearClients = () => {
+    return {
+        type: "CLEAR_CLIENTS"
+    }
+}
 
 // async actions
 

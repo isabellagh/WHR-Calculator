@@ -4,6 +4,7 @@ import currentUser from './reducers/currentUser'
 import loginForm from './reducers/loginForm'
 import myClients from './reducers/myClients'
 import signupForm from './reducers/signupForm'
+import newClientForm from './reducers/newClientForm'
 import thunk from 'redux-thunk'
 
 
@@ -12,7 +13,8 @@ const reducer = combineReducers({
     currentUser,
     loginForm,
     myClients,
-    signupForm
+    signupForm,
+    newClientForm,
   })
   
   const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

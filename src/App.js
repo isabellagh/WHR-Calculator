@@ -1,57 +1,27 @@
 import React, { Component } from "react";
-import { Route, withRouter, Redirect } from "react-router-dom";
+import { Route, withRouter, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
-// import Login from './components/Login'
 import Welcome from "./components/Welcome";
-// import Trainers from "./pages/Trainers";
-// import TrainerInfo from "./pages/TrainerInfo";
+import Trainers from "./components/Trainers";
+import TrainerInfo from "./components/TrainerInfo";
 import Login from "./components/Login";
-import Logout from "./components/Logout";
+// import Logout from "./components/Logout";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
-// import Clients from "./pages/Clients";
+// import Clients from "./components/Clients";
+// import NewClientForm from "./components/NewClientForm"
 // import ClientInfo from "./pages/ClientInfo";
 // import ClientNew from "./pages/ClientNew";
-// import "./App.css";
 import { connect } from 'react-redux'
-import MainContainer from './components/MainContainer'
+// import MainContainer from './components/MainContainer'
 import { getCurrentUser } from './actions/currentUser';
-import MyClients from "./components/MyClients";
+import UserNavBar from "./components/UserNavBar";
 
 class App extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     loginForm: {
-  //       email: "",
-  //       password: "",
-  //     },
-  //     clients: []
-  //   };
-  // }
 
   componentDidMount() {
     this.props.getCurrentUser()
   }
-
-
- 
-  // logout = (event) => {
-  //   event.preventDefault()
-  //   fetch("http://localhost:3000/logout", {
-  //     credentials: "include",
-  //     method: "DELETE",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     }
-  //   })
-  //   .then(response => response.json())
-  //   .then(resp => alert(resp.message))
-  //   this.setState({
-  //     currentUser: null,
-  //     clients: []
-  //   })
-  // }
 
 
   // getClients = () => {
@@ -79,16 +49,17 @@ class App extends Component {
     const { loggedIn } = this.props
     return (
       <div className="App">
-        { loggedIn ? <Logout/> : null}
-        <Route exact path='/signup' render={({history}) => <Signup history={history}/>}/>
-          {/* <Route exact path='/signup' render={(props) => loggedIn ? <Redirect to="/profile"/> : <Signup {...props} />}/> */}
+        { loggedIn ? <UserNavBar/> : <NavBar/> }
+        <Switch>
+          <Route exact path='/signup' render={({history}) => <Signup history={history}/>}/>
           <Route exact path='/login' component={Login} />
-          <Route exact path='/' render={(props) => loggedIn ? <Profile {...props}/> : <Welcome {...props} />}/>
+          <Route exact path='/' component={Welcome}/>
           <Route exact path='/profile' component={Profile}/>
-          {/* <Route exact path='/welcome' component={Welcome} /> */}
-          {/* <Route exact path='/profile' render={(props) => <Profile {...props}/>}/> */}
-          {/* <Route exact path='/my-clients' component={MyClients} /> */}
-          {/* <Route exact path='/logout' render={(props) => <Logout {...props}/>} />  */}
+          {/* <Route exact path='/clients' component={Clients}/> */}
+          {/* <Route exact path='/clients/new' component={NewClientForm}/> */}
+          <Route exact path='/trainers' component={Trainers}/>
+          <Route exact path="/trainers/:id"><TrainerInfo /></Route>
+        </Switch>
       </div>
     );
   } 
@@ -99,7 +70,6 @@ const mapStateToProps = state => {
     loggedIn: !!state.currentUser
   })
 }
-
 
 
 export default withRouter(connect(mapStateToProps, { getCurrentUser })(App))

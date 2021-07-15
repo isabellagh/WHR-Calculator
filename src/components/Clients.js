@@ -2,7 +2,7 @@ import React from 'react'
 import ClientCard from './ClientCard'
 import { connect } from 'react-redux'
 
-const MyClients = props => {
+const Clients = props => {
     const clientCards = props.clients.length > 0 ? props.clients.map(c => <ClientCard client={c} key={c.attributes.id} />) : null
     return (
         clientCards
@@ -11,8 +11,8 @@ const MyClients = props => {
 
 const mapStateToProps = state => {
     return {
-        clients: state.myClients
+        clients: state.clients
     }
 }
 
-export default connect(mapStateToProps)(MyClients)
+export default connect(mapStateToProps)(Clients)
