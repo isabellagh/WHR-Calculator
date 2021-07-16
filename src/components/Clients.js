@@ -1,28 +1,37 @@
+import React, { Component } from "react";
+import NewClientForm from "./NewClientForm";
+import { connect } from "react-redux"
+import {getCurrentUser} from "../actions/currentUser" 
+import {Link} from 'react-router-dom'
+import {addClient, getMyClients} from '../actions/myClients'
+class Clients extends Component {
 
+  componentDidMount() {
+      this.props.getMyClients()
+  }
 
+  handleAddClient = (client) => {
+      this.props.addClient(client)
+  }
 
+//   to={{pathname: `/clients/${client.id}`}}
 
-
-
-
-
-
-
-// import React from 'react'
-// import ClientCard from './ClientCard'
-// import { connect } from 'react-redux'
-
-// const Clients = props => {
-//     const clientCards = props.clients.length > 0 ? props.clients.map(c => <ClientCard client={c} key={c.attributes.id} />) : null
-//     return (
-//         clientCards
-//     )
-// }
+  render() {
+    return (
+      <div>    {/*render the results from the form*/}
+        <NewClientForm handleAddClient={this.handleAddClient}/>
+        {this.props.getCurrentUser && this.props.clients.map(client => (
+          <p>{client.name}</p>
+    ))}
+      </div>
+    );
+  }
+}
 
 // const mapStateToProps = state => {
-//     return {
-//         clients: state.clients
-//     }
+//   return {clients: state.myClients}
 // }
 
-// export default connect(mapStateToProps)(Clients)
+// export default connect(mapStateToProps, {getCurrentUser})(Clients)
+
+export default connect(state => ({clients: state.myClients.clients}), {addClient, getCurrentUser, getMyClients} ) (Clients)

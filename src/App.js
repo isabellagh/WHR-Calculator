@@ -8,8 +8,8 @@ import Login from "./components/Login";
 // import Logout from "./components/Logout";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
-// import Clients from "./components/Clients";
-// import NewClientForm from "./components/NewClientForm"
+import Clients from "./components/Clients";
+import NewClientForm from "./components/NewClientForm"
 // import ClientInfo from "./pages/ClientInfo";
 // import ClientNew from "./pages/ClientNew";
 import { connect } from 'react-redux'
@@ -26,27 +26,6 @@ class App extends Component {
   }
 
 
-  // getClients = () => {
-  //   fetch("http://localhost:3000/clients", {
-  //     credentials: "include",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     }
-  //   })
-  //     .then((response) => response.json())
-  //     .then((clients) => {
-  //       if (clients.error) {
-  //         alert("not authorized");
-  //       } else {
-  //         this.setState({
-  //           clients,
-  //         });
-  //       }
-  //     })
-  //     .catch(console.log);
-  // };
-
-
   render() {
     const { loggedIn } = this.props
     return (
@@ -57,11 +36,12 @@ class App extends Component {
           <Route exact path='/login' component={Login} />
           <Route exact path='/' component={Welcome}/>
           <Route exact path='/profile' component={Profile}/>
-          {/* <Route exact path='/clients' component={Clients}/> */}
-          {/* <Route exact path='/clients/new' component={NewClientForm}/> */}
+          <Route exact path='/clients' component={Clients}/>
+          <Route exact path='/clients/new' component={NewClientForm}/>
           <Route exact path='/trainers' component={Trainers}/>
           <Route exact path="/trainers/:id"><TrainerInfo /></Route>
         </Switch>
+        {/* <Clients /> */}
       </div>
     );
   } 

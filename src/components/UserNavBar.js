@@ -16,7 +16,7 @@ const UserNavBar = ({ currentUser, loggedIn }) => {
             </NavLink>
           </li> */}
           <li>
-          <NavLink to='/propfile' render={(props) => loggedIn ? <Profile {...props}/> : <Welcome {...props} />}/>
+          <NavLink to='/profile' render={(props) => loggedIn ? <Profile {...props}/> : <Welcome {...props} />}/>
           </li>
           <li>
             <NavLink activeClassName={classes.active} to='/profile' >

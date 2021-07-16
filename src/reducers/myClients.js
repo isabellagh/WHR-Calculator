@@ -1,20 +1,14 @@
+const myClients = (state = {clients: []}, action) => {
+    console.log(state);
+  switch (action.type) {
+    case "ADD_CLIENT":
+      return {...state, clients: [...state.clients, action.client]}
+    case "GET_MY_CLIENTS":
+      return {...state, clients: action.clients}
+      default:
+        return state
+  }
+}
 
+export default myClients
 
-
-
-
-
-
-
-
-
-// export default (state = [], action) => {
-//   switch (action.type) {
-//     case "SET_MY_CLIENTS":
-//       return action.clients
-//         case "CLEAR_CLIENTS":
-//       return []
-//     default:
-//       return state
-//   }
-// }

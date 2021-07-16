@@ -1,24 +1,24 @@
-import React from 'react'
+// import React from 'react'
 
 
-// componentDidMount() {
-//   fetch('http://localhost:3000/api/v1/users')
-//   .then(response => response.json())
-//   .then(data => console.log(data))
+// // componentDidMount() {
+// //   fetch('http://localhost:3000/api/v1/users')
+// //   .then(response => response.json())
+// //   .then(data => console.log(data))
+// // }
+
+// const Profile = () => {
+//     return (
+//       <div>
+//         <h1>Profile Page</h1>
+//           {/* {users.map((user, index) => (
+//             <div>
+//               <h3>Name: {user.name}</h3>
+//               <p>Email: {user.email}</p> */}
+//               {/* <h1>Image:</h1> */}
+//             {/* </div> */}
+//           ))
+//       </div>)
 // }
 
-const Profile = () => {
-    return (
-      <div>
-        <h1>Profile Page</h1>
-          {/* {users.map((user, index) => (
-            <div>
-              <h3>Name: {user.name}</h3>
-              <p>Email: {user.email}</p> */}
-              {/* <h1>Image:</h1> */}
-            {/* </div> */}
-          ))
-      </div>)
-}
-
-export default Profile
+// export default Profile
