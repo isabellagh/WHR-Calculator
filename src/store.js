@@ -4,6 +4,7 @@ import currentUser from './reducers/currentUser'
 import loginForm from './reducers/loginForm'
 import myClients from './reducers/myClients'
 import signupForm from './reducers/signupForm'
+import trainerReducer from './reducers/trainerReducer'
 // import newClientForm from './reducers/newClientForm'
 import thunk from 'redux-thunk'
 
@@ -14,6 +15,7 @@ const reducer = combineReducers({
     loginForm,
     myClients,
     signupForm,
+    trainerReducer,
     // newClientForm,
   })
   

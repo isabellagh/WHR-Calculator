@@ -28,10 +28,5 @@ class Clients extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {clients: state.myClients}
-// }
-
-// export default connect(mapStateToProps, {getCurrentUser})(Clients)
 
 export default connect(state => ({clients: state.myClients.clients}), {addClient, getCurrentUser, getMyClients} ) (Clients)

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, withRouter, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Welcome from "./components/Welcome";
-import Trainers from "./components/Trainers";
+import TrainersContainer from "./components/TrainersContainer";
 import TrainerInfo from "./components/TrainerInfo";
 import Login from "./components/Login";
 // import Logout from "./components/Logout";
@@ -38,7 +38,7 @@ class App extends Component {
           <Route exact path='/profile' component={Profile}/>
           <Route exact path='/clients' component={Clients}/>
           <Route exact path='/clients/new' component={NewClientForm}/>
-          <Route exact path='/trainers' component={Trainers}/>
+          <Route exact path='/trainers' component={TrainersContainer}/>
           <Route exact path="/trainers/:id"><TrainerInfo /></Route>
         </Switch>
         {/* <Clients /> */}

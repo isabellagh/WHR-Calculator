@@ -28,7 +28,7 @@ export const getMyClients = () => {
 }
 
 export const handleAddClient = (client) => {
-    console.log("post what?????", client);
+    // console.log("posting what?????", client);
     return dispatch => {
         return fetch("http://localhost:3000/api/v1/clients", {
         credentials: "include",    

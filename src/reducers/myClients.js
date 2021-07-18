@@ -1,5 +1,5 @@
 const myClients = (state = {clients: []}, action) => {
-    console.log(state);
+    // console.log(state);
   switch (action.type) {
     case "ADD_CLIENT":
       return {...state, clients: [...state.clients, action.client]}
