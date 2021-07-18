@@ -19,13 +19,13 @@ class TrainersContainer extends React.Component {
   }
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         users: state.users
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        users: state.users.users
+    }
+}
 
-export default connect(state => ({users: state}), {fetchTrainers})(TrainersContainer)
+export default connect(mapStateToProps, {fetchTrainers})(TrainersContainer)
 
 
 

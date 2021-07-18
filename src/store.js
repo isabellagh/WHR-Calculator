@@ -10,12 +10,11 @@ import thunk from 'redux-thunk'
 
 
 const reducer = combineReducers({
-    // users: usersReducer,
+    users: trainerReducer,
     currentUser,
     loginForm,
     myClients,
     signupForm,
-    trainerReducer,
     // newClientForm,
   })
   
