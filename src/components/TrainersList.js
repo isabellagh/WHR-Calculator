@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const TrainersList = (props) => {
 
@@ -6,9 +7,15 @@ const TrainersList = (props) => {
 
   return (
       <div>
-          Trainers List rendered
-        {props.users.map(user => 
-          <li key={user.id}> {user.name}</li>)}
+        <h3>List of our Trainers</h3>
+        <ol>
+          {props.users.map(user => 
+          <li key={user.id}> 
+            <Link to={{pathname: `/trainers/${user.id}`}}>
+            {user.name}
+            </Link>
+          </li>)}
+        </ol>
       </div>
   )
 
