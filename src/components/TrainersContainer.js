@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import TrainersList from './TrainersList'
 import { connect } from 'react-redux'
 import { fetchTrainers } from '../actions/fetchTrainers'
 
-class TrainersContainer extends React.Component {
+class TrainersContainer extends Component {
 
   componentDidMount() {
       this.props.fetchTrainers()

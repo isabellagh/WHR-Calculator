@@ -24,7 +24,7 @@ const UserNavBar = ({ currentUser, loggedIn }) => {
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to='/my-clients'>
+            <NavLink activeClassName={classes.active} to='/clients'>
               My clients
             </NavLink>
           </li>
