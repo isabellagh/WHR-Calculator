@@ -32,7 +32,7 @@ class Clients extends Component {
 
 const mapStateToProps = state => {
   return {
-      clients: state.clients.clients
+      clients: state.myClients.clients
   }
 }
 

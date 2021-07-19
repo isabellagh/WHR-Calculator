@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 // import TrainersList from './TrainersList';
 
 const TrainerInfo = (props) => {
-  console.log("trainer props", props);
+  // console.log("trainer props", props);
   // const user = props.users.find(user => user.id === props.match.params.id)
 
   const user = props.users[props.match.params.id -1]

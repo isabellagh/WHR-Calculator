@@ -12,7 +12,7 @@ const reducer = combineReducers({
     users: trainerReducer,
     currentUser,
     loginForm,
-    clients: myClients,
+    myClients,
     signupForm,
   })
   
