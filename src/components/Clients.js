@@ -38,9 +38,9 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {addClient, getCurrentUser, getMyClients}) (Clients)
 
-{/* // export default connect(state => ({clients: state.myClients.clients}), {addClient, getCurrentUser, getMyClients} ) (Clients) */}
+// export default connect(state => ({clients: state.myClients.clients}), {addClient, getCurrentUser, getMyClients} ) (Clients) */}
 
-{/* 
-{this.props.getCurrentUser && this.props.clients.map(client => (
-          <p>{client.name}</p>
-    ))} */}
+
+// {this.props.getCurrentUser && this.props.clients.map(client => (
+//           <p>{client.name}</p>
+//     ))}

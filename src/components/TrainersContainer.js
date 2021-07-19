@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import TrainersList from './TrainersList'
 import { connect } from 'react-redux'
+import { Route } from 'react-router-dom'
+import TrainersList from './TrainersList'
 import { fetchTrainers } from '../actions/fetchTrainers'
 
 class TrainersContainer extends Component {
@@ -12,8 +13,7 @@ class TrainersContainer extends Component {
   render() {
       return (
           <div>
-              TrainersContainer
-              <TrainersList users={this.props.users}/>
+            <TrainersList users={this.props.users}/>
           </div>
       )
   }

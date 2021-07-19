@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ClientList = (props) => {
 
-    console.log("props", props);
+    // console.log("props", props);
 
   return (
       <div>

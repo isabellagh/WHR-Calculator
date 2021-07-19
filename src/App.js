@@ -10,7 +10,7 @@ import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Clients from "./components/Clients";
 import NewClientForm from "./components/NewClientForm"
-// import ClientInfo from "./pages/ClientInfo";
+import ClientInfo from "./components/ClientInfo";
 // import ClientNew from "./pages/ClientNew";
 import { connect } from 'react-redux'
 // import MainContainer from './components/MainContainer'
@@ -36,12 +36,12 @@ class App extends Component {
           <Route exact path='/login' component={Login} />
           <Route exact path='/' component={Welcome}/>
           <Route exact path='/profile' component={Profile}/>
-          <Route exact path='/clients' component={Clients}/>
           <Route exact path='/clients/new' component={NewClientForm}/>
+          <Route exact path="/clients/:id" render={(routerProps) => <ClientInfo {...routerProps} clients={this.props.clients}/>}></Route>
+          <Route exact path='/clients' component={Clients}/>
+          <Route exact path="/trainers/:id" render={(routerProps) => <TrainerInfo {...routerProps} users={this.props.users}/>}></Route>
           <Route exact path='/trainers' component={TrainersContainer}/>
-          <Route exact path="/trainers/:id"><TrainerInfo /></Route>
         </Switch>
-        {/* <Clients /> */}
       </div>
     );
   } 
