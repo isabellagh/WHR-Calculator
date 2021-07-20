@@ -1,4 +1,4 @@
-import { getMyClients, clearClients } from "./myClients"
+import { getMyClients } from "./myClients"
 import { clearLoginForm } from "./loginForm"
 import { clearSignupForm } from "./signupForm"
 

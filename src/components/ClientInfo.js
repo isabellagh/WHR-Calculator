@@ -9,7 +9,7 @@ const ClientInfo = (props) => {
   
   const handleDelete = () => {
     //   debugger
-      props.deleteClient(props.match.params.id)
+      props.deleteClient(props.match.params.id, props.history)
       //   console.log("handleDelete", event.props.clientId);
     }
     
@@ -23,8 +23,9 @@ const ClientInfo = (props) => {
         <br />
         <img src={client ? client.attributes.image : null} alt=""></img>
         <br /> <br />
-        <button type="button" class="btn btn-danger" onClick={handleDelete}>Delete client</button>
+        <button type="button" className="btn btn-danger" onClick={handleDelete}>Delete client</button>
       </div>
+      
       //add other attributes
     )
 }

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import NewClientForm from "./NewClientForm";
+// import NewClientForm from "./NewClientForm";
 import { connect } from "react-redux"
 import {getCurrentUser} from "../actions/currentUser" 
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {addClient, getMyClients} from '../actions/myClients'
 import ClientsList from "./ClientsList";
 class Clients extends Component {

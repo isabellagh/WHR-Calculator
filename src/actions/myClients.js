@@ -5,6 +5,13 @@ export const addClient = client => {
     }
 }
 
+export const deleteClientAction = clientId => {
+    return {
+        type: "DELETE_CLIENT",
+        clientId
+    }
+}
+
 export const getMyClients = () => {
     return dispatch => {
         return fetch("http://localhost:3000/api/v1/clients", {
@@ -52,14 +59,27 @@ export const handleAddClient = (client) => {
     }
 }
 
-export const deleteClient = (clientId) => {
+export const deleteClient = (clientId, history) => {
 //   debugger
-    return (dispatch) => {
-        return fetch(`http://localhost:3000/api/v1/clients/${clientId}`, {
-            method: "DELETE"
-        })
-        .then(response => response.json())
-        .then(clientId => dispatch({type: "DELETE_CLIENT", clientId: clientId}))
+  return dispatch => {
+      return fetch(`http://localhost:3000/api/v1/clients/${clientId}`, {
+        method: "DELETE"
+        }
+    )
+    .then(response => response.json()) 
+    .then(resp => {
+        dispatch(deleteClientAction(resp.data))
+        history.push('/clients')
+    })
+    .catch(console.log)
+  }
+    // return (dispatch) => {
+    //     return fetch(`http://localhost:3000/api/v1/clients/${clientId}`, {
+    //         method: "DELETE"
+    //     })
+    //     .then(response => response.json())
+    //     .then(clientId => dispatch({type: "DELETE_CLIENT", clientId: clientId}))
+    //     history.push('/clients')
     
-    }
+    // }
 }
