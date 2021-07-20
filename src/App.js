@@ -32,15 +32,20 @@ class App extends Component {
       <div className="App">
         { loggedIn ? <UserNavBar/> : <NavBar/> }
         <Switch>
-          <Route exact path='/signup' render={({history}) => <Signup history={history}/>}/>
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/' component={Welcome}/>
+          
+          {/* { loggedIn ? 
+          <fragment> */}
           <Route exact path='/profile' component={Profile}/>
           <Route exact path='/clients/new' component={NewClientForm}/>
           <Route exact path="/clients/:id" render={(routerProps) => <ClientInfo {...routerProps} clients={this.props.clients}/>}></Route>
           <Route exact path='/clients' component={Clients}/>
           <Route exact path="/trainers/:id" render={(routerProps) => <TrainerInfo {...routerProps} users={this.props.users}/>}></Route>
-          <Route exact path='/trainers' component={TrainersContainer}/>
+          <Route exact path='/trainers' component={TrainersContainer}/> 
+          : 
+          <Route exact path='/signup' render={({history}) => <Signup history={history}/>}/>
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/' component={Welcome}/>
+          {/* </fragment>} */}
         </Switch>
       </div>
     );
