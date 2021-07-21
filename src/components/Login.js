@@ -20,8 +20,11 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
     }
 
     return (
+        <div className="container">
         <form onSubmit={handleSubmit}>
+        <br/>
           <h3>Log in</h3>
+          <br/>
           <div className="form-group">
           <input
           type="text"
@@ -32,7 +35,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
           onChange={handleInputChange}
           />
            </div>
-
+            <br/>
            <div className="form-group">
           <input
           type="password"
@@ -43,7 +46,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
           onChange={handleInputChange}
           />
             </div>
-
+            <br/>
           <input
           type="submit"
           value="Log In"
@@ -51,6 +54,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
           />
          
         </form>
+        </div>
     )
 }
 

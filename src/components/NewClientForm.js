@@ -48,9 +48,9 @@ class NewClientForm extends Component {
     return (
       <div className="row justify-content-center">
       <hr/>
-        <h3 className="text-center"> Client's information.</h3>
+        <h3> Your client's information.</h3>
         <hr/>
-      <form onSubmit={this.handleSubmit} className="row g-6">
+      <form onSubmit={this.handleSubmit} className="row g-3">
         <div className="col-md-6">
           <label for="inputName" className="col-sm-2 col-form-label">
             Name
