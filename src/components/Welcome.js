@@ -1,10 +1,13 @@
 import React from 'react'
 import Form from './Form'
+import '../App.css';
 
 
 const Welcome = () => (
     <div>
-      <h4>welcome</h4>
+    <hr/>
+      <h1 className="text-center">Welcome</h1>
+      <hr/>
       <Form />
     </div>
 )

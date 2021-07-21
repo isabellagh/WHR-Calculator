@@ -21,7 +21,7 @@ const ClientInfo = (props) => {
             {client ? client.attributes.age : null}
         </h2>
         <br />
-        <img src={client ? client.attributes.image : null} alt=""></img>
+        <img src={client ? client.attributes.image : null} className="img-thumbnail rounded mx-auto d-block" alt=""></img>
         <br /> <br />
         <button type="button" className="btn btn-danger" onClick={handleDelete}>Delete client</button>
       </div>

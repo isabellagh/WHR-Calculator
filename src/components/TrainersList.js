@@ -5,13 +5,15 @@ const TrainersList = (props) => {
   // console.log("props", props);
 
   return (
-    <div>
-      <br />
-      <h3>List of our Trainers</h3>
-      <br />
+    <div className="container">
+      <hr />
+      <h3 className="text-center"> List of our Trainers:</h3>
+      <hr />
+      <div className=" card-group">
       {props.users.map((user) => (
-        <div className="card" style={{ width: 250 }} key={user.id}>
-          <img src={user.image} className="card-img-top" alt="..." />
+        <div style={{ width: 250 }} key={user.id}>
+        <div className="card mb-4 shadow-sm">
+          <img src={user.image} className="card-img-top img-thumbnail" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{user.name}</h5>
             <p className="card-text">{user.email}</p>
@@ -20,7 +22,9 @@ const TrainersList = (props) => {
             </a>
           </div>
         </div>
+        </div>
       ))}
+      </div>
     </div>
   );
 };

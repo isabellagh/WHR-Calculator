@@ -2,15 +2,14 @@ import React from 'react'
 // import UserNavBar from './UserNavBar'
 import { connect } from 'react-redux'
 
-
+//! null attributes when page refreshed
 
 const Profile = (props) => (
-    <div>
-    {console.log("profile", props)}
-        <h1>profile</h1>
+    <div className="container">
+    {/* {console.log("profile", props)} */}
         <br />
-        <p>{props.currentUser && props.currentUser.attributes.name}</p>
-        <img src={props.currentUser.attributes.image} className="card-img-top" alt="..." />
+        <h1 className="text-center">{props.currentUser && props.currentUser.attributes.name}</h1>
+        <img src={props.currentUser.attributes.image} className="img-thumbnail rounded mx-auto d-block" alt="..." />
     </div>
 )
 const mapStateToProps = state => {

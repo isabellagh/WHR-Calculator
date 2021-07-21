@@ -98,14 +98,14 @@ export const getCurrentUser = () => {
         .then(response => response.json())
         .then(resp => {
             if (resp.error) {
-                // alert(resp.error)
+                alert(resp.error)
             } else {
                 dispatch(setCurrentUser(resp.data))
                 dispatch(getMyClients())
                 
             }
         })
-        .catch(console.log)
+        .catch(error => console.log(error))
     }
 }
 

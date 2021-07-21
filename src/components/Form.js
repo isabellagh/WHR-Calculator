@@ -21,7 +21,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="row d-inline-block">
         <div className="row">
           <h3>WHR = {this.state.whr}</h3>
           <TextInput label="Waist" placeholder="Waist circunference" onChange={this.waistChange}
