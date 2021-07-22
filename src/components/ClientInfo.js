@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteClient } from "../actions/myClients";
 import { Link } from "react-router-dom";
+import WorkoutsContainer from "./WorkoutsContainer";
 
 const ClientInfo = (props) => {
   console.log("clients props", props);
@@ -22,7 +23,8 @@ const ClientInfo = (props) => {
       <h2 className="text-center">{client ? client.attributes.name : null}</h2>
       <hr />
       <div className=" card-group">
-        <div style={{ width: 250 }} key={client.id}>
+        <div style={{ width: 250 }}>
+        {/* key={client.id} */}
           <div className="card mb-4 shadow-sm">
             <img
               src={client ? client.attributes.image : null}
@@ -30,14 +32,14 @@ const ClientInfo = (props) => {
               alt=""
             ></img>
             <div className="card-body">
-              <h5 className="card-title">Gender: {client.attributes.gender}</h5>
-              <h5 className="card-title">Age: {client.attributes.age}</h5>
-              <h5 className="card-title">Weight: {client.attributes.weight}</h5>
-              <h5 className="card-title">Height: {client.attributes.height}</h5>
-              <h5 className="card-title">Waist: {client.attributes.waist}</h5>
-              <h5 className="card-title">Hip: {client.attributes.hip}</h5>
-              <p className="card-text">Goal: {client.attributes.goal}</p>
-              <p className="card-text">{client.attributes.email}</p>
+              <h5 className="card-title">Gender: {client ? client.attributes.gender : null}</h5>
+              <h5 className="card-title">Age: {client ? client.attributes.age : null}</h5>
+              <h5 className="card-title">Weight: {client ? client.attributes.weight : null}</h5>
+              <h5 className="card-title">Height: {client ? client.attributes.height : null}</h5>
+              <h5 className="card-title">Waist: {client ? client.attributes.waist : null}</h5>
+              <h5 className="card-title">Hip: {client ? client.attributes.hip : null}</h5>
+              <p className="card-text">Goal: {client ? client.attributes.goal : null}</p>
+              <p className="card-text">{client ? client.attributes.email : null}</p>
                 <Link className="btn btn-success" to={{ pathname: `/workouts/new` }}>
                   Add a Workout
                 </Link>
@@ -53,9 +55,8 @@ const ClientInfo = (props) => {
           </div>
         </div>
       </div>
+      <WorkoutsContainer client={client}/>
     </div>
-
-    //add other attributes
   );
 };
 

@@ -10,7 +10,7 @@ const TrainerInfo = (props) => {
   const user = props.users[props.match.params.id -1]
   // const user = props.users.filter(user => user.id === props.match.params.id)[0]
   
-  //!attrubutes vanish after refreshing the page
+  //attrubutes vanish after refreshing the page, fixed
 
     return (
       <div className="container">
