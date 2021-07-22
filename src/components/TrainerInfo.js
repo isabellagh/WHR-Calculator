@@ -13,7 +13,8 @@ const TrainerInfo = (props) => {
   //!attrubutes vanish after refreshing the page
 
     return (
-      <div>
+      <div className="container">
+      <br/>
         <h2>Trainer: {user ? user.name : null}</h2>
           <br />
         <img src={user ? user.image : null} alt=""></img>

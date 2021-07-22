@@ -40,7 +40,7 @@ class App extends Component {
           <Route exact path='/clients/new' component={NewClientForm}/>
           <Route exact path="/clients/:id" render={(routerProps) => <ClientInfo {...routerProps} clients={this.props.clients}/>}></Route>
           <Route exact path='/clients' component={Clients}/>
-          <Route exact path="/trainers/:id" render={(routerProps) => <TrainerInfo {...routerProps} users={this.props.users}/>}></Route>
+          <Route exact path="/trainers-profile/:id" render={(routerProps) => <TrainerInfo {...routerProps} users={this.props.users}/>}></Route>
           <Route exact path='/trainers' component={TrainersContainer}/> 
           : 
           <Route exact path='/signup' render={({history}) => <Signup history={history}/>}/>

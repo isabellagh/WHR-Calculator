@@ -10,6 +10,21 @@
   height: 40vmin;
 }
 
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+img-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+
 .App-header {
   /* background-color: #282c34; */
   /* min-height: 100vh; */

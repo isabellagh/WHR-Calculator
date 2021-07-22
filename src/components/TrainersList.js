@@ -1,6 +1,6 @@
 import React from "react";
 import '../App.css'
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const TrainersList = (props) => {
   // console.log("props", props);
@@ -18,9 +18,9 @@ const TrainersList = (props) => {
           <div className="card-body">
             <h5 className="card-title">{user.name}</h5>
             <p className="card-text">{user.email}</p>
-            <a href="/trainers/:id" className="btn btn-primary">
-              Go somewhere
-            </a>
+            <Link to={{ pathname: `/trainers-profile/${user.id}` }}>
+              View trainer's full information
+            </Link>
           </div>
         </div>
         </div>

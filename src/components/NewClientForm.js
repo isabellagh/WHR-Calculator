@@ -27,7 +27,7 @@ class NewClientForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.handleAddClient(this.state);
+    this.props.handleAddClient(this.state, this.props.history);
 
     this.setState({
       name: "",

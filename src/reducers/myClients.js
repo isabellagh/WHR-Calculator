@@ -1,3 +1,5 @@
+// const initialState =[]
+
 const myClients = (state = {clients: []}, action) => {
     // console.log(state);
   switch (action.type) {

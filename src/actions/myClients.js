@@ -28,13 +28,14 @@ export const getMyClients = () => {
             } else {
                 // console.log(resp.data)
                 dispatch({type: "GET_MY_CLIENTS", clients: resp.data})
+                //    dispatch(addClient(resp.data))
             }
         })
         .catch(console.log)
     }
 }
 
-export const handleAddClient = (client) => {
+export const handleAddClient = (client, history) => {
     // console.log("posting what?????", client);
     return dispatch => {
         return fetch("http://localhost:3000/api/v1/clients", {
@@ -52,6 +53,7 @@ export const handleAddClient = (client) => {
             } else {
                 console.log(resp.data)
                 dispatch(({type: "ADD_CLIENT", client: resp.data}))
+                history.push('/clients')
                 
             }
         })

@@ -9,7 +9,7 @@ const ClientList = (props) => {
       <hr />
       <h3 className="text-center"> List of my clients:</h3>
       <hr />
-      <div className=" card-group">
+      <div className=" card-group ">
         {props.clients.map((client) => (
           <div style={{ width: 250 }} key={client.id}>
             <div className="card mb-4 shadow-sm">
@@ -21,8 +21,8 @@ const ClientList = (props) => {
               <div className="card-body">
                 <h5 className="card-title">{client.attributes.name}</h5>
                 <p className="card-text">{client.attributes.email}</p>
-                <Link to={{ pathname: `/clients/${client.id}` }}>
-                  View client information
+                <Link className="btn btn-primary" to={{ pathname: `/clients/${client.id}` }}>
+                  View
                 </Link>
               </div>
             </div>

@@ -4,7 +4,7 @@ import '../App.css';
 
 
 const Welcome = () => (
-    <div>
+    <div className="container">
     <hr/>
       <h1 className="text-center">Welcome</h1>
       <hr/>
