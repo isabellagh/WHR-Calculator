@@ -17,6 +17,7 @@ import { connect } from 'react-redux'
 // import MainContainer from './components/MainContainer'
 import { getCurrentUser } from './actions/currentUser';
 import UserNavBar from "./components/UserNavBar";
+import WorkoutForm from "./components/WorkoutForm";
 // import NewClientForm from './NewClientForm'
 
 
@@ -42,6 +43,7 @@ class App extends Component {
           <Route exact path='/clients' component={Clients}/>
           <Route exact path="/trainers-profile/:id" render={(routerProps) => <TrainerInfo {...routerProps} users={this.props.users}/>}></Route>
           <Route exact path='/trainers' component={TrainersContainer}/> 
+          <Route exact path='/clients/:id/workouts/new' component={WorkoutForm}/>
           : 
           <Route exact path='/signup' render={({history}) => <Signup history={history}/>}/>
           <Route exact path='/login' component={Login} />

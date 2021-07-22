@@ -2,10 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteClient } from "../actions/myClients";
 import { Link } from "react-router-dom";
-import WorkoutsContainer from "./WorkoutsContainer";
+import Workouts from "./Workouts";
+// import WorkoutsContainer from "./WorkoutsContainer";
 
 const ClientInfo = (props) => {
-  console.log("clients props", props);
+  console.log("clientInfo props", props);
 
   const handleDelete = () => {
     //   debugger
@@ -13,7 +14,7 @@ const ClientInfo = (props) => {
     //   console.log("handleDelete", event.props.clientId);
   };
 
-  //   const client = props.clients[props.match.params.id -1]  //!wont show the right id
+  //   const client = props.clients[props.match.params.id -1]  //!wont show the right id and pic
   const client = props.clients.find(
     (client) => client.id === props.match.params.id
   );
@@ -40,7 +41,7 @@ const ClientInfo = (props) => {
               <h5 className="card-title">Hip: {client ? client.attributes.hip : null}</h5>
               <p className="card-text">Goal: {client ? client.attributes.goal : null}</p>
               <p className="card-text">{client ? client.attributes.email : null}</p>
-                <Link className="btn btn-success" to={{ pathname: `/workouts/new` }}>
+                <Link className="btn btn-success" to={{ pathname: `/clients/${client.id}/workouts/new` }}>
                   Add a Workout
                 </Link>
                 <br/> <br/>
@@ -55,7 +56,8 @@ const ClientInfo = (props) => {
           </div>
         </div>
       </div>
-      <WorkoutsContainer client={client}/>
+      {/* <WorkoutsContainer client={client}/> */}
+      <Workouts />
     </div>
   );
 };
