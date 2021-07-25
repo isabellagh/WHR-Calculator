@@ -2,8 +2,16 @@
 
 /* Global Styles */
 .App {
+  font-family: "Roboto", sans-serif;
+  /* font-size: 1rem; */
+  /* line-height: 1.6; */
+  background-color: rgb(224, 223, 230);
+  position:absolute; 
+    height:100%; 
+    width:100%;
+    margin: -19px 0 0 0;
+    width: 100%;
   text-align: center;
-  
 }
 
 .App-logo {
@@ -39,15 +47,34 @@ img-centered {
   -ms-flex-pack: center !important;
   justify-content: center !important;
 }
-
+/* 
 .wall {
   background-color: rgb(237, 240, 230);
-}
+} */
 
 .nav {
   display: flex;
   flex-direction: row;
   color: blue;
+}
+
+/* html, body { */
+  /* background-color: rgb(224, 223, 230); */
+  /* position:absolute;  */
+    /* height:100%;  */
+    /* width:100%; */
+    /* margin: -19px 0 0 0; */
+    /* width: 100%; */
+  /* text-align: center; */
+/* } */
+
+html, body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: rgb(224, 223, 230);
+  color: #333;
+  text-align: center;
 }
 
 :root {
@@ -64,13 +91,7 @@ img-centered {
   padding: 0;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  background-color: rgb(235, 235, 220);
-  color: #333;
-}
+
 
 a {
   color: var(--primary-color);

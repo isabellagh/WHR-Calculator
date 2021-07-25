@@ -15,8 +15,6 @@ class Clients extends Component {
       this.props.addClient(client)
   }
 
-//   to={{pathname: `/clients/${client.id}`}}
-
   render() {
     return (
       <div>    {/*render the results from the form*/}
@@ -37,6 +35,11 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {addClient, getCurrentUser, getMyClients}) (Clients)
+
+
+
+
+
 
 // export default connect(state => ({clients: state.myClients.clients}), {addClient, getCurrentUser, getMyClients} ) (Clients) */}
 

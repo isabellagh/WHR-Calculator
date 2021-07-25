@@ -75,13 +75,4 @@ export const deleteClient = (clientId, history) => {
     })
     .catch(console.log)
   }
-    // return (dispatch) => {
-    //     return fetch(`http://localhost:3000/api/v1/clients/${clientId}`, {
-    //         method: "DELETE"
-    //     })
-    //     .then(response => response.json())
-    //     .then(clientId => dispatch({type: "DELETE_CLIENT", clientId: clientId}))
-    //     history.push('/clients')
-    
-    // }
 }

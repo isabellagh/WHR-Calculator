@@ -12,7 +12,6 @@ import Profile from "./components/Profile";
 import Clients from "./components/Clients";
 import NewClientForm from "./components/NewClientForm"
 import ClientInfo from "./components/ClientInfo";
-// import ClientNew from "./pages/ClientNew";
 import { connect } from 'react-redux'
 // import MainContainer from './components/MainContainer'
 import { getCurrentUser } from './actions/currentUser';
@@ -51,7 +50,7 @@ class App extends Component {
           {/* </fragment>} */}
         </Switch>
       </div>
-    );
+    )
   } 
 }
 
