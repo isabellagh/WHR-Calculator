@@ -6,11 +6,11 @@ const TrainersList = (props) => {
   // console.log("props", props);
 
   return (
-    <div className="container">
+    <div className="container overflow-hidden">
       <hr />
       <h3 className="text-center"> List of our Trainers:</h3>
       <hr />
-      <div className=" card-group">
+      <div className="d-inline-block">
       {props.users.map((user) => (
         <div style={{ width: 250 }} key={user.id}>
         <div className="card mb-4 shadow-sm">
