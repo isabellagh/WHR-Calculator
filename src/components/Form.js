@@ -21,15 +21,15 @@ class Form extends React.Component {
 
   render() {
     return (
-      <div class="row d-inline-block">
+      <div className="row d-inline-block">
         <div className="row">
-          <h3>WHR = {this.state.whr}</h3>
-          <TextInput label="Waist" placeholder="Waist circunference" onChange={this.waistChange}
+          <h3>Your WHR is: {this.state.whr}</h3>
+          <TextInput label="Waist" placeholder="Waist circunf." onChange={this.waistChange}
           />
         </div>
         <div className="row">
           <h3>{this.state.whrClass}</h3>
-          <TextInput label="Hip" placeholder="Hip circunference" onChange={this.hipChange}
+          <TextInput label="Hip" placeholder="Hip circunf." onChange={this.hipChange}
           />
         </div>
         <button className="row">
@@ -43,21 +43,22 @@ class Form extends React.Component {
       console.log(this.state);
     let whrValue = this.state.waist / this.state.hip
     this.setState({ whr: whrValue })
-    let whrClass = this.getWhr(whrValue)
-    this.setState({ whr: whrClass })
+    console.log("whrvalue", whrValue);
+    // let whrClass = this.getWhr(whrValue)
+    // this.setState({ whr: whrClass })
   }
   // results for women
-  getWhr(whr) {
-    if (whr < 0.8) {
-      return "Low";
-    }
-    if (whr > 0.79 && whr < 0.86) {
-      return "Moderate";
-    }
-    if (whr > 0.85) {
-      return "High";
-    }
-  }
+  // getWhr(whr) {
+  //   if (whr < 0.8) {
+  //     return "Low";
+  //   }
+  //   if (whr > 0.79 && whr < 0.86) {
+  //     return "Moderate";
+  //   }
+  //   if (whr > 0.85) {
+  //     return "High";
+  //   }
+  // }
 }
 
 export default Form;
