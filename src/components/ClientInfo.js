@@ -19,14 +19,14 @@ const ClientInfo = (props) => {
     (client) => client.attributes.id === parseInt(props.match.params.id, 10)
   );
   return (
-    <div className="container">
+    <div className="container col-md-6 box">
       <hr />
     {/* ternary */}
     
       <h2 className="text-center">{client ? client.attributes.name : null}</h2>
       <hr />
-      <div className=" card-group">
-        <div style={{ width: 250 }}>
+      <div className=" card-group d-inline-block">
+        <div style={{ width: 400}}>
         {/* key={client.id} */}
           <div className="card mb-4 shadow-sm">
             <img

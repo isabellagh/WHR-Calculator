@@ -68,6 +68,12 @@ img-centered {
   /* text-align: center; */
 /* } */
 
+.box{
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  background-clip:padding-box;
+}
+
 html, body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;

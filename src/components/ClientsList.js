@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 const ClientList = (props) => {
   // console.log("props", props);
 
+  
+
   return (
-    <div className="container">
+    <div className="container col-md-6 box">
       <hr />
       <h3 className="text-center"> List of my clients:</h3>
       <hr />
-      <div className=" card-group ">
+      <div className=" card-group d-inline-block ">
         {props.clients.map((client) => (
-          <div style={{ width: 250 }} key={client.id}>
+          <div style={{ width: 200 }} key={client.id}>
             <div className="card mb-4 shadow-sm">
               <img
                 src={client.attributes.image}
