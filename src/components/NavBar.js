@@ -7,7 +7,7 @@ import Profile from "./Profile";
 const NavBar = ({ currentUser, loggedIn }) => {
   return (
     <header className={classes.header}>
-      <nav>
+      <nav className="d-inline-block">
         <ul>
           <li>
             <NavLink activeClassName={classes.active} to='/'>
