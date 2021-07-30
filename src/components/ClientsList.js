@@ -13,7 +13,7 @@ const ClientList = (props) => {
       <hr />
       <div className=" card-group d-inline-block ">
         {props.clients.map((client) => (
-          <div style={{ width: 200 }} key={client.id}>
+          <div style={{ width: 250 }} key={client.id}>
             <div className="card mb-4 shadow-sm">
               <img
                 src={client.attributes.image}
