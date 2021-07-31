@@ -21,7 +21,7 @@ const Presentational = () => {
         <p>"The WHO advise that a healthy WHR is:"</p>
         <ul>
           <li> 0.85 or less for women</li>
-          <li> 0.9 or less for men</li>
+          <li> 0.96 or less for men</li>
         </ul>
         <p>
           "If a person has a high WHR and is carrying excess weight around their
