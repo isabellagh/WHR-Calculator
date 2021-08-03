@@ -6,14 +6,12 @@ import Welcome from "./components/Welcome";
 import TrainersContainer from "./components/TrainersContainer";
 import TrainerInfo from "./components/TrainerInfo";
 import Login from "./components/Login";
-// import Logout from "./components/Logout";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Clients from "./components/Clients";
 import NewClientForm from "./components/NewClientForm"
 import ClientInfo from "./components/ClientInfo";
 import { connect } from 'react-redux'
-// import MainContainer from './components/MainContainer'
 import { getCurrentUser } from './actions/currentUser';
 import UserNavBar from "./components/UserNavBar";
 import WorkoutForm from "./components/WorkoutForm";
