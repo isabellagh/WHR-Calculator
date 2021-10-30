@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./Form";
+import Form from "./calculator/Form";
 import Presentational from "./Presentational";
 import "../App.css";
 

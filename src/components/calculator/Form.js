@@ -1,7 +1,7 @@
 import React from "react";
 import TextInput from "./TextInput";
 import Button from "./Button";
-import "../styles/Form.css";
+import "./Form.css";
 
 class Form extends React.Component {
   constructor(props) {
@@ -19,6 +19,7 @@ class Form extends React.Component {
     this.setState({ hip: hipValue });
   }
 
+  
   render() {
     return (
       <div className="row d-inline-block">

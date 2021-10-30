@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deleteClient } from "../actions/myClients";
-import Form from "./Form";
+import Form from "./calculator/Form";
 
 const ClientInfo = (props) => {
   const handleDelete = () => {
