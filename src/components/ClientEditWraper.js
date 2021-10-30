@@ -1,8 +1,8 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import {handleAddClient} from '../actions/myClients'
+// import React from 'react'
+// import { connect } from 'react-redux'
+// import {handleAddClient} from '../actions/myClients'
 
 
-const ClientEditWraper = () => {
+// const ClientEditWraper = () => {
     
-}
+// }

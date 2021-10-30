@@ -2,28 +2,20 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteClient } from "../actions/myClients";
 import Form from "./Form";
-// import { Link } from "react-router-dom";
-// import Workouts from "./Workouts";
-// import WorkoutsContainer from "./WorkoutsContainer";
 
 const ClientInfo = (props) => {
-  // console.log("clientInfo props", props);
-
   const handleDelete = () => {
-    //   debugger
     props.deleteClient(props.match.params.id, props.history);
-    //   console.log("handleDelete", event.props.clientId);
   };
 
-  //   const client = props.clients[props.match.params.id -1]  //!wont show the right id and pic
   const client = props.clients.find(
     (client) => client.attributes.id === parseInt(props.match.params.id, 10)
   );
+
   return (
     <div className="container col-md-6 box">
       <hr />
       {/* ternary */}
-
       <h2 className="text-center">{client ? client.attributes.name : null}</h2>
       <hr />
       <div className=" card-group d-inline-block">
@@ -60,10 +52,6 @@ const ClientInfo = (props) => {
               <p className="card-text">
                 {client ? client.attributes.email : null}
               </p>
-              {/* <Link className="btn btn-success" to={{ pathname: `/clients/:id}/workouts/new` }}> */}
-              {/* <Link className="btn btn-success" to={{ pathname: `/clients/${client.id}/workouts/new` }}> */}
-              {/* Add a Workout
-                </Link> */}
               <br /> <br />
               <button
                 type="button"
@@ -76,15 +64,12 @@ const ClientInfo = (props) => {
           </div>
         </div>
       </div>
-      {/* <WorkoutsContainer client={client}/> */}
-      {/* <Workouts /> */}
       <Form />
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  // console.log("mapstate", state);
   return {
     clients: state.myClients.clients,
   };

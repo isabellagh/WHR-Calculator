@@ -15,6 +15,7 @@ import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser';
 import UserNavBar from "./components/UserNavBar";
 import WorkoutForm from "./components/WorkoutForm";
+// import Form from "./components/Form";
 // import NewClientForm from './NewClientForm'
 
 

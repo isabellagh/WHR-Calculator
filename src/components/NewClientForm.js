@@ -193,8 +193,5 @@ class NewClientForm extends Component {
   }
 }
 
-// NewClientForm.defaultProps = {
-//   image: "https://reactnativecode.com/wp-content/uploads/2018/02/Default_Image_Thumbnail.png"
-// }
 
 export default connect(null, { handleAddClient })(NewClientForm);

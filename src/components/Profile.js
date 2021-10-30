@@ -8,7 +8,7 @@ const Profile = (props) => (
     {/* {console.log("profile", props)} */}
         <br />
         <h1 className="text-center">{props.currentUser && props.currentUser.attributes.name}</h1>
-        <img src={props.currentUser.attributes.image} className="img-thumbnail" alt="..." />
+        <img src={props.currentUser.attributes.image} className="img-thumbnail" style={{ width: '400px'}} alt="..." />
         <h4 className="text-center">{props.currentUser && props.currentUser.attributes.email}</h4>
     </div>
 )

@@ -6,7 +6,6 @@ import { fetchTrainers } from '../actions/fetchTrainers'
 // import Profile from './Profile'
 import {getCurrentUser} from "../actions/currentUser" 
 
-
 class TrainersContainer extends Component {
 
   componentDidMount() {
@@ -19,7 +18,6 @@ class TrainersContainer extends Component {
             <TrainersList users={this.props.users}/>
             {/* <Route exact path='/profile' component={Profile} currentUser={this.props.currentUser}/> */}
 
-            {/* <Profile /> */}
           </div>
       )
   }

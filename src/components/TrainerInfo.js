@@ -16,7 +16,7 @@ const TrainerInfo = (props) => {
     <div className="container">
       <br /> <br />
       <div class="row g-0 d-inline-block">
-        <img className="" src={user ? user.image : null} alt="" />
+        <img className="" src={user ? user.image : null} style={{ width: '400px'}} alt="" />
         <div className="col-md-8 d-inline-block">
           <div className="card-body">
             <h2 className="card-title">{user ? user.name : null}</h2>

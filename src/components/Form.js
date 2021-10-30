@@ -40,7 +40,7 @@ class Form extends React.Component {
   }
 
   computeWhr = () => {
-      console.log(this.state);
+      // console.log(this.state);
     let whrValue = this.state.waist / this.state.hip
     this.setState({ whr: whrValue })
     console.log("whrvalue", whrValue);

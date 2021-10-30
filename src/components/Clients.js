@@ -17,12 +17,8 @@ class Clients extends Component {
 
   render() {
     return (
-      <div>    {/*render the results from the form*/}
-      {/* Clients container */}
-        {/* <NewClientForm handleAddClient={this.handleAddClient}/> */}
-        <ClientsList clients={this.props.getCurrentUser && this.props.clients}
-     />
-
+      <div>
+        <ClientsList clients={this.props.getCurrentUser && this.props.clients} />
       </div>
     );
   }

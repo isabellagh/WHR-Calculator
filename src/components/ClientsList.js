@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 const ClientList = (props) => {
   // console.log("props", props);
 
-  
-
   return (
     <div className="container col-md-6 box">
       <hr />
@@ -23,7 +21,10 @@ const ClientList = (props) => {
               <div className="card-body">
                 <h5 className="card-title">{client.attributes.name}</h5>
                 <p className="card-text">{client.attributes.email}</p>
-                <Link className="btn btn-primary" to={{ pathname: `/clients/${client.id}` }}>
+                <Link
+                  className="btn btn-primary"
+                  to={{ pathname: `/clients/${client.id}` }}
+                >
                   View
                 </Link>
               </div>
