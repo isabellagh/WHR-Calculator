@@ -6,13 +6,15 @@ const initialState = {
 }
 
 
-export default (state=initialState, action) => {
+ const SignupForm = (state=initialState, action) => {
     switch (action.type) {
-      case "UPDATE_SIGNUP_FORM":
-          return action.formData
-      case "CLEAR_SIGNUP_FORM":
-          return initialState
-        default:
-            return state
-    }
+        case "UPDATE_SIGNUP_FORM":
+            return action.formData
+            case "CLEAR_SIGNUP_FORM":
+                return initialState
+                default:
+                    return state
+                }
 }
+
+export default SignupForm
