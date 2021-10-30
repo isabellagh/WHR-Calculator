@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { updateNewClientForm } from "../actions/newClientForm";
 import { connect } from "react-redux";
-import { handleAddClient } from "../../actions/myClients";
+import { handleAddClient } from "../actions/myClients";
 
 class NewClientForm extends Component {
   state = {
