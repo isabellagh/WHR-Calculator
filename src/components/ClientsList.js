@@ -1,28 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./clients-list.css";
 
 const ClientList = (props) => {
   // console.log("props", props);
 
   return (
-    <div className="container col-md-6 box">
-      <hr />
-      <h3 className="text-center"> List of my clients:</h3>
-      <hr />
-      <div className=" card-group d-inline-block ">
+    <div className="clients-container">
+      <h3 className="clients-h1"> My Clients</h3>
+      <div className="clients-wrapper">
         {props.clients.map((client) => (
-          <div style={{ width: 250 }} key={client.id}>
-            <div className="card mb-4 shadow-sm">
+          <div style={{ width: 250}} key={client.id}>
+            <div className="clients-card">
               <img
                 src={client.attributes.image}
-                className="card-img-top img-thumbnail"
+                className="clients-img"
                 alt="..."
               />
               <div className="card-body">
                 <h5 className="card-title">{client.attributes.name}</h5>
                 <p className="card-text">{client.attributes.email}</p>
                 <Link
-                  className="btn btn-primary"
+                  className="clients-profile-btn"
                   to={{ pathname: `/clients/${client.id}` }}
                 >
                   View
