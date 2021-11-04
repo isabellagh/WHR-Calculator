@@ -12,6 +12,7 @@ const ClientInfo = (props) => {
     (client) => client.attributes.id === parseInt(props.match.params.id, 10)
   );
 
+ 
   return (
     <div className="container col-md-6 box">
       <hr />

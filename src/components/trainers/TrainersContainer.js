@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // import { Route } from 'react-router-dom'
 import TrainersList from './TrainersList'
-import { fetchTrainers } from '../actions/fetchTrainers'
+import { fetchTrainers } from '../../actions/fetchTrainers'
 // import Profile from './Profile'
-import {getCurrentUser} from "../actions/currentUser" 
+import {getCurrentUser} from "../../actions/currentUser" 
 
 class TrainersContainer extends Component {
 

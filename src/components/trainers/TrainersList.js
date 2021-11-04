@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 class TrainersList extends Component {
   // console.log("props", props);
 
-  state = 
-    {count: 0}
+  // state = 
+  //   {count: 0}
 
 
   render() {
@@ -31,8 +31,8 @@ class TrainersList extends Component {
                     View trainer's full information
                   </Link>
                 </div>
-                <p>liked {this.state.count} times</p>
-                <button onClick={() => this.setState({count: this.state.count + 1})}>Click me</button>
+                {/* <p>liked {this.state.count} times</p>
+                <button onClick={() => this.setState({count: this.state.count + 1})}>Click me</button> */}
               </div>
             </div>
           ))}

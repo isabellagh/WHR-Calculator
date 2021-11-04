@@ -17,6 +17,7 @@ class NewClientForm extends Component {
     hip: "",
   };
 
+  
   // const { name, age, gender, email, goal, image, weight, height, waist, hip } = formData
 
   handleOnChange = (event) => {
