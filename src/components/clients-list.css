@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #010606;
+    background: rgb(224, 223, 230);
   }
   
   .clients-wrapper {
@@ -18,7 +18,7 @@
   }
   
   .clients-card {
-    background: #e8e7ec;
+    background: #fdfcfd;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -38,7 +38,7 @@
   
   .clients-h1 {
     font-size: 2.5rem;
-    color: #fff;
+    color: rgb(5, 5, 5);
     margin-top: 64px;
     margin-bottom: 64px;
   }
