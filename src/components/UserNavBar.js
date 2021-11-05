@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import classes from "./layout/NavBar.module.css";
-import { connect } from 'react-redux'
+import { connect } from "react-redux";
 import Logout from "./Logout";
 import Welcome from "./Welcome";
 import Profile from "./Profile";
@@ -16,31 +16,34 @@ const UserNavBar = ({ currentUser, loggedIn }) => {
             </NavLink>
           </li> */}
           <li>
-          <NavLink to='/profile' render={(props) => loggedIn ? <Profile {...props}/> : <Welcome {...props} />}/>
+            <NavLink
+              to="/profile"
+              render={(props) =>
+                loggedIn ? <Profile {...props} /> : <Welcome {...props} />
+              }
+            />
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to='/profile' >
-              Profile 
+            <NavLink activeClassName={classes.active} to="/profile">
+              Profile
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to='/clients'>
-              My clients
+            <NavLink activeClassName={classes.active} to="/clients">
+              My Clients
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to='/clients/new'>
-              New Client
+            <NavLink activeClassName={classes.active} to="/clients/new">
+              Add Client
             </NavLink>
-          </li> 
+          </li>
           <li>
-            <NavLink activeClassName={classes.active} to='/trainers'>
+            <NavLink activeClassName={classes.active} to="/trainers">
               Trainers
             </NavLink>
           </li>
-          <li>
-          { loggedIn ? <Logout/> : null}
-          </li>
+          <li>{loggedIn ? <Logout /> : null}</li>
         </ul>
       </nav>
     </header>
@@ -50,8 +53,8 @@ const UserNavBar = ({ currentUser, loggedIn }) => {
 const mapStateToProps = ({ currentUser }) => {
   return {
     currentUser,
-    loggedIn: !!currentUser
-  }
-}
+    loggedIn: !!currentUser,
+  };
+};
 
-export default connect(mapStateToProps)(UserNavBar)
+export default connect(mapStateToProps)(UserNavBar);
