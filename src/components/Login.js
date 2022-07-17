@@ -1,7 +1,9 @@
-import React from "react";
-import { connect } from "react-redux";
-import { updateLoginForm } from "../actions/loginForm";
-import { login } from "../actions/currentUser";
+import React from 'react';
+import './login.css';
+import { connect } from 'react-redux';
+import { updateLoginForm } from '../actions/loginForm';
+import { login } from '../actions/currentUser';
+import { FaUserAlt, FaLock, FaFacebook } from 'react-icons/fa';
 
 const Login = ({ loginFormData, updateLoginForm, login, history }) => {
   const handleInputChange = (event) => {
@@ -19,40 +21,48 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
   };
 
   return (
-    <div className="row d-inline-block">
-      <div className="row no-gutters">
-        <div className="card-body">
-          <form onSubmit={handleSubmit}>
-            <br />
-            <h3>Log in</h3>
-            <br />
-            <div className="form-group">
+    <div className='container-login'>
+      <div className='forms-container'>
+        <div className='signin-signup'>
+          <form onSubmit={handleSubmit} className='signin-form'>
+            <h3 className='title-signin'>Log in</h3>
+            <div className='input-field'>
+              <i className='FiUser'>
+                <FaUserAlt />
+              </i>
               <input
-                type="text"
-                name="email"
+                type='text'
+                name='email'
                 value={loginFormData.email}
-                placeholder="Enter Email"
-                className="form-control"
+                placeholder='Enter Email'
                 onChange={handleInputChange}
               />
             </div>
-            <br />
-            <div className="form-group">
+            <div className='input-field'>
+              <i className='fas fa-lock'></i>
               <input
-                type="password"
-                name="password"
+                type='password'
+                name='password'
                 value={loginFormData.password}
-                placeholder="Password"
-                className="form-control"
+                placeholder='Password'
                 onChange={handleInputChange}
               />
             </div>
-            <br />
-            <input
-              type="submit"
-              value="Log In"
-              className="btn btn-primary btn-block"
-            />
+            <input type='submit' value='Log In' className='btn-login' />
+            <div className='signup-link'>
+              <a href='/signup' className='here'>
+                | Sign Up as a Trainer |
+              </a>
+            </div>
+            {/* <p className='social-text'></p>
+            <div className='social-media'>
+              Or Signin with Facebook
+              <a href='/' className='social-icon'>
+                <i>
+                  <FaFacebook />
+                </i>
+              </a>
+            </div> */}
           </form>
         </div>
       </div>

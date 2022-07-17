@@ -1,0 +1,91 @@
+
+.calculator-section{
+  background-image: linear-gradient(
+    to right top,
+    #097bea,
+    #2f78da,
+    #4074ca,
+    #4b71ba,
+    #526eab,
+    #3b6da1,
+    #286a95,
+    #1c6787,
+    #006272,
+    #005c59,
+    #15533e,
+    #2b4926
+  );
+  height: 100vh;
+}
+  
+.whr-wrapper { max-width: 500px;
+  width: 100%;
+  background: url('https://images.unsplash.com/photo-1515261439133-0f6cfb098e04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  margin: 0px auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+}
+
+.whr-title { 
+  font-size: 40px;
+  font-weight: 700px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  margin-bottom: 25px;
+  color: #c8e412;
+  text-transform: uppercase;
+  text-align: center;
+}  
+
+.whr-input-field {
+  margin-bottom: 15px;
+  /* margin-left: 30px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.whr-input {width: 100%;
+  outline: none;
+  background-color:#d2dee2;
+  font-size: 15px;
+  padding: 10px ;
+  border-radius: 5px;
+  
+}
+
+.whr-label {width: 200px;
+  color: #578ff1;
+  margin-right: 10px;
+  font-size: 14px;}
+  
+
+
+/* .GenderField {}
+
+.GenderSelect {} */
+
+.whr-btn {
+  width: 30%;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 23px;
+  border: 0;
+  background: #9feb61;
+  color: rgb(4, 4, 4);
+  display: flex;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  animation: none;
+  margin: 20px auto;
+  box-shadow: none;
+}
+
+.whr-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(246, 246, 4);
+}

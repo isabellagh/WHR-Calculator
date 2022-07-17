@@ -1,14 +1,12 @@
-.trainers-container {
-  /* height: 950px; */
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;
-  background: #010606;
+.t-info-container {
+  height: 100vh;
+  padding: 90px 0;
+  background-image: linear-gradient(to right top, #097bea, #2f78da, #4074ca, #4b71ba, #526eab, #3b6da1, #286a95, #1c6787, #006272, #005c59, #15533e, #2b4926);
+  text-align: center;
 }
 
-.trainers-wrapper {
-  width: 841px;
+.t-info-wrapper {
+  width: 600px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -16,7 +14,7 @@
   align-items: center;
 }
 
-.trainers-card {
+.t-info-card {
   background: #e8e7ec;
   display: flex;
   flex-direction: column;
@@ -25,49 +23,111 @@
   border-radius: 10px;
   max-height: 340px;
   padding: 30px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
 }
 
-.trainers-img {
-  height: 120px;
-  width: 160px;
-  margin-bottom: 10px;
+.t-info-card:hover {
+  transform: scale(1.1);
+  transition: all 0.2s;
 }
 
-.trainers-h1 {
+@media (max-width: 600px) {
+  .t-info-card {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+.t-info-img {
+  height: 400px;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.t-info-img:hover {
+  transform: scale(1.1);
+  transition: all 0.2s;
+}
+
+@media (max-width: 600px) {
+  .t-info-img {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+.t-info-h1 {
   font-size: 2.5rem;
-  color: #fff;
-  margin-top: 64px;
-  margin-bottom: 64px;
-}
-
-.trainers-h2 {
-  font-size: 1rem;
   margin-bottom: 10px;
 }
 
-.trainers-p {
-  font-size: 1rem;
+@media (max-width: 600px) {
+  .t-info-h1 {
+    font-size: 1.5rem;
+    /* margin-bottom: 10px; */
+  }
+  .t-info-contact {
+    font-size: 0.5rem;
+    /* font-weight: 500; */
+    text-decoration: none;
+    color: rgb(5, 57, 15);
+  }
+}
+
+.t-info-p {
+  font-size: 1.1rem;
   text-align: center;
   margin-bottom: 15px;
+  font-weight: 500;
+}
+@media (max-width: 600px) {
+  .t-info-p {
+    font-size: 1rem;
+    text-align: center;
+    /* margin-bottom: 15px; */
+    /* font-weight: 500; */
+  }
 }
 
-.trainers-profile {
-  border-radius: 50px;
-  background: rgba(107, 152, 221, 0.918);
-  white-space: nowrap;
-  padding: 6px 20px;
-  color: #010606;
-  font-size: 15px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+.t-info-contact {
+  font-size: 25px;
+  font-weight: 500;
   text-decoration: none;
+  color: rgb(5, 57, 15);
 }
 
-.btn-link {
+.ti-email {
+  font-size: 20px;
+  font-weight: 500;
   text-decoration: none;
-  color: #010606;
+  color: rgb(5, 57, 15);
+}
+
+.ti-email:hover {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(34, 172, 64);
+  text-decoration: underline;
+}
+
+.ti-p {
+  font-size: 25px;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(5, 57, 15);
+}
+
+
+@media (max-width: 600px) {
+  .ti-p {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: rgb(5, 57, 15);
+  }
+}
+
+.ti-icon {
+  margin: 0 0.45rem ;
 }

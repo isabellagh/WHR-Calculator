@@ -1,11 +1,24 @@
-import React from "react";
-import Form from "./calculator/Form";
-import Presentational from "./Presentational";
-import "../App.css";
+import React from 'react';
+// import Form from "./calculator/Form";
+// import Presentational from './Presentational';
+import '../App.css';
+// import WHRCalculator from './calculator2/WHRCalculator';
+import Categories from './Categories';
+import Footer from './footer/Footer';
+import './welcome.css';
 
 const Welcome = () => (
-  <div>
-    <Presentational />
+  <div className='container-welcome'>
+    {/* <Hero /> */}
+    <Categories />
+    <Footer />
+    {/* <Calculator /> */}
+  </div>
+);
+
+export default Welcome;
+
+/* <Presentational />
     <div className="overflow-hidden">
       <div className="row d-inline-block">
         <div className="col">
@@ -46,13 +59,9 @@ const Welcome = () => (
           </div>
           <div className="col">
             <div className="p-3 border bg-light">
-              <Form />
+              <WHRCalculator />
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-);
-
-export default Welcome;
+    </div> */

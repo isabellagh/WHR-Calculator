@@ -1,23 +1,22 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 // import { updateNewClientForm } from "../actions/newClientForm";
-import { connect } from "react-redux";
-import { handleAddClient } from "../../actions/myClients";
-
+import { connect } from 'react-redux';
+import { handleAddClient } from '../../actions/myClients';
+import './new-client-form.css';
 class NewClientForm extends Component {
   state = {
-    name: "",
-    age: "",
-    gender: "",
-    email: "",
-    goal: "",
-    image: "",
-    weight: "",
-    height: "",
-    waist: "",
-    hip: "",
+    name: '',
+    age: '',
+    gender: '',
+    email: '',
+    goal: '',
+    image: '',
+    weight: '',
+    height: '',
+    waist: '',
+    hip: '',
   };
 
-  
   // const { name, age, gender, email, goal, image, weight, height, waist, hip } = formData
 
   handleOnChange = (event) => {
@@ -31,168 +30,169 @@ class NewClientForm extends Component {
     this.props.handleAddClient(this.state, this.props.history);
 
     this.setState({
-      name: "",
-      age: "",
-      gender: "",
-      email: "",
-      goal: "",
-      image: "",
-      weight: "",
-      height: "",
-      waist: "",
-      hip: "",
+      name: '',
+      age: '',
+      gender: '',
+      email: '',
+      goal: '',
+      image: '',
+      weight: '',
+      height: '',
+      waist: '',
+      hip: '',
     });
   };
 
   // const handleSubmit = event => event.preventDefault()
   render() {
     return (
-      <div className="row d-inline-block">
-        <hr />
-        <h3> Your client's information.</h3>
-        <hr />
-        <form onSubmit={this.handleSubmit} className="row g-3">
-          <div className="col-md-6">
-            <label for="inputName" className="col-sm-2 col-form-label">
+      <section className='new-client-section'>
+        <header className='new-client-header'>
+          <h3 className='new-client-h1'> Your client's information.</h3>
+        </header>
+        <br />
+        <form onSubmit={this.handleSubmit} className='client-form-container'>
+          {/*  */}
+          <div className=''>
+            {/* <label for='inputName' className=''>
               Name
-            </label>
-            <div className="col-sm-10">
-              <input
-                name="name"
-                className="form-control"
-                onChange={this.handleOnChange}
-                value={this.state.name}
-              ></input>
-            </div>
+            </label> */}
+            <input
+              placeholder='Name'
+              name='name'
+              className='client-form-input'
+              onChange={this.handleOnChange}
+              value={this.state.name}
+            ></input>
           </div>
-          <div className="col-md-6">
-            <label for="inputAge" className="col-sm-2 col-form-label">
+          {/*  */}
+          <div className=''>
+            {/* <label for='inputAge' className=''>
               Age
-            </label>
-            <div className="col-sm-10">
-              <input
-                name="age"
-                className="form-control"
-                onChange={this.handleOnChange}
-                value={this.state.age}
-              ></input>
-            </div>
+            </label> */}
+            <input
+              placeholder='Age'
+              name='age'
+              className='client-form-input'
+              onChange={this.handleOnChange}
+              value={this.state.age}
+            ></input>
           </div>
-          <div className="col-md-6">
-            <label for="inputEmail" className="col-sm-2 col-form-label">
+          {/*  */}
+          <div className=''>
+            {/* <label for='inputEmail' className=''>
               Email
-            </label>
-            <div className="col-sm-10">
-              <input
-                name="email"
-                className="form-control"
-                onChange={this.handleOnChange}
-                value={this.state.email}
-              ></input>
-            </div>
+            </label> */}
+            <input
+              placeholder='Email'
+              name='email'
+              className='client-form-input'
+              onChange={this.handleOnChange}
+              value={this.state.email}
+            ></input>
           </div>
-          <div className="col-md-6">
-            <label for="inputGender" className="col-sm-2 col-form-label">
+          {/*  */}
+          <div className=''>
+            {/* <label for='inputGender' className=''>
               Gender
-            </label>
-            <div className="col-sm-10">
-              <input
-                name="gender"
-                className="form-control"
-                onChange={this.handleOnChange}
-                value={this.state.gender}
-              ></input>
-            </div>
+            </label> */}
+            <input
+              placeholder='Gender'
+              name='gender'
+              className='client-form-input'
+              onChange={this.handleOnChange}
+              value={this.state.gender}
+            ></input>
           </div>
-          <div className="col-md-6">
-            <label for="inputGoal" className="col-sm-2 col-form-label">
+          {/*  */}
+          <div className=''>
+            {/* <label for='inputGoal' className=''>
               Goal
-            </label>
-            <div className="col-sm-10">
-              <input
-                name="goal"
-                className="form-control"
-                onChange={this.handleOnChange}
-                value={this.state.goal}
-              ></input>
-            </div>
+            </label> */}
+            <input
+              placeholder='Goal'
+              name='goal'
+              className='client-form-input'
+              onChange={this.handleOnChange}
+              value={this.state.goal}
+            ></input>
           </div>
-          <div className="col-md-6">
-            <label for="inputImage" className="col-sm-2 col-form-label">
+          {/*  */}
+          <div className=''>
+            {/* <label for='inputImage' className=''>
               Image
-            </label>
-            <div className="col-sm-10">
-              <input
-                name="image"
-                className="form-control"
-                onChange={this.handleOnChange}
-                value={this.state.image}
-              ></input>
-            </div>
+            </label> */}
+            <input
+              placeholder='Image'
+              name='image'
+              className='client-form-input'
+              onChange={this.handleOnChange}
+              value={this.state.image}
+            ></input>
           </div>
-          <div className="col-md-6">
-            <label for="inputWeight" className="col-sm-2 col-form-label">
+          {/*  */}
+          <div className=''>
+            {/* <label for='inputWeight' className=''>
               Weight
-            </label>
-            <div className="col-sm-10">
-              <input
-                name="weight"
-                className="form-control"
-                onChange={this.handleOnChange}
-                value={this.state.weight}
-              ></input>
-            </div>
+            </label> */}
+            <input
+              placeholder='Weight'
+              name='weight'
+              className='client-form-input'
+              onChange={this.handleOnChange}
+              value={this.state.weight}
+            ></input>
           </div>
-          <div className="col-md-6">
-            <label for="inputHeight" className="col-sm-2 col-form-label">
+          <div className=''>
+            {/* <label for='inputHeight' className=''>
               Height
-            </label>
-            <div className="col-sm-10">
-              <input
-                name="height"
-                className="form-control"
-                onChange={this.handleOnChange}
-                value={this.state.height}
-              ></input>
-            </div>
+            </label> */}
+            <input
+              placeholder='Height'
+              name='height'
+              className='client-form-input'
+              onChange={this.handleOnChange}
+              value={this.state.height}
+            ></input>
           </div>
-          <div className="col-md-6">
-            <label for="inputWaist" className="col-sm-2 col-form-label">
+          {/*  */}
+          <div className=''>
+            {/* <label for='inputWaist' className=''>
               Waist
-            </label>
-            <div className="col-sm-10">
-              <input
-                name="waist"
-                className="form-control"
-                onChange={this.handleOnChange}
-                value={this.state.waist}
-              ></input>
-            </div>
+            </label> */}
+            <input
+              placeholder='Waist'
+              name='waist'
+              className='client-form-input'
+              onChange={this.handleOnChange}
+              value={this.state.waist}
+            ></input>
           </div>
-          <div className="col-md-6">
-            <label for="inputHip" className="col-sm-2 col-form-label">
+          {/*  */}
+          <div className=''>
+            {/* <label for='inputHip' className=''>
               Hip
-            </label>
-            <div className="col-sm-10">
-              <input
-                name="hip"
-                className="form-control"
-                onChange={this.handleOnChange}
-                value={this.state.hip}
-              ></input>
-            </div>
+            </label> */}
+            <input
+              placeholder='Hip'
+              name='hip'
+              className='client-form-input'
+              onChange={this.handleOnChange}
+              value={this.state.hip}
+            ></input>
           </div>
-          <br /> <br />
-          <input
-            class="btn btn-success"
-            type="submit"
-            value="Create new client"
-          />
+          {/*  */}
+          <div className='client-btn-div'>
+            <input
+              class='new-client-btn'
+              type='submit'
+              value='Add new client'
+            />
+          </div>
         </form>
-      </div>
+      </section>
     );
   }
 }
-
 
 export default connect(null, { handleAddClient })(NewClientForm);

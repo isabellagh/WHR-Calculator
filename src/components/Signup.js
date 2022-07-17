@@ -1,7 +1,11 @@
-import React from "react";
-import { connect } from "react-redux";
-import { updateSignupForm } from "../actions/signupForm";
-import { signup } from "../actions/currentUser";
+import React from 'react';
+import { connect } from 'react-redux';
+import { updateSignupForm } from '../actions/signupForm';
+import { signup } from '../actions/currentUser';
+import { FaUserAlt, FaLock } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { BsImageFill } from 'react-icons/bs';
+import './signup.css';
 
 const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   const handleUserInfoInputChange = (event) => {
@@ -19,62 +23,60 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   };
 
   return (
-    <div className="row d-inline-block">
-      <div className="row no-gutters">
-        <div className="card-body">
-          <form onSubmit={handleSubmit}>
+    <div className='container-login'>
+      <div className='forms-container'>
+        <div className='signin-signup'>
+          <form onSubmit={handleSubmit} className='signin-form'>
+            <h3 className='title-signin'>Sign Up as a Trainer</h3>
             <br />
-            <h3>Sign Up as a Trainer</h3>
-            <br />
-            <div className="form-group">
+            <div className='input-field'>
+              <i className='FiUser'>
+                <FaUserAlt />
+              </i>
               <input
-                type="text"
-                name="name"
+                type='text'
+                name='name'
                 value={signupFormData.name}
-                placeholder="Name"
+                placeholder='Name'
                 onChange={handleUserInfoInputChange}
-                className="form-control"
               />
             </div>
-            <br />
-            <input
-              type="text"
-              name="image"
-              value={signupFormData.image}
-              placeholder="Image URL"
-              onChange={handleUserInfoInputChange}
-              className="form-control"
-            />
-            <br />
-            <div className="form-group">
+            <div className='input-field'>
+              <i className='FiUser'>
+                <MdEmail />
+              </i>
               <input
-                type="text"
-                name="email"
+                type='text'
+                name='email'
                 value={signupFormData.email}
-                placeholder="Email"
+                placeholder='Enter Email'
                 onChange={handleUserInfoInputChange}
-                className="form-control"
               />
             </div>
-            <br />
-            <div className="form-group">
+            <div className='input-field'>
+              <i className='FiUser'>
+                <BsImageFill />
+              </i>
               <input
-                type="password"
-                name="password"
+                type='text'
+                name='image'
+                value={signupFormData.image}
+                placeholder='Image URL'
+                onChange={handleUserInfoInputChange}
+              />
+            </div>
+            <div className='input-field'>
+              <i className='fas fa-lock'></i>
+              <input
+                type='password'
+                name='password'
                 value={signupFormData.password}
-                placeholder="Password"
+                placeholder='Password'
                 onChange={handleUserInfoInputChange}
-                className="form-control"
               />
             </div>
-            <br />
-            <div className="form-group">
-              <input
-                type="submit"
-                value="Sign Up"
-                className="btn btn-primary btn-block"
-              />
-            </div>
+
+            <input type='submit' value='Sign Up' className='btn-login' />
           </form>
         </div>
       </div>

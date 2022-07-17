@@ -1,37 +1,46 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./clients-list.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './clients-list.css';
 
 const ClientList = (props) => {
   // console.log("props", props);
 
   return (
-    <div className="clients-container">
-      <h3 className="clients-h1"> My Clients</h3>
-      <div className="clients-wrapper">
-        {props.clients.map((client) => (
-          <div style={{ width: 250}} key={client.id}>
-            <div className="clients-card">
+    <section className='clients-list-section'>
+      <div className='clients-list-container'>
+        <header className='clients-list-header'>
+          <h1 className='clients-list-h1'> My Clients</h1>
+        </header>
+        <main className='main-clients'>
+          {props.clients.map((client) => (
+            <div className='clients-card' key={client.id}>
               <img
                 src={client.attributes.image}
-                className="clients-img"
-                alt="..."
+                className='clients-img'
+                alt={client.name}
               />
-              <div className="card-body">
-                <h5 className="card-title">{client.attributes.name}</h5>
-                <p className="card-text">{client.attributes.email}</p>
+              <div className='client-content'>
+                <h3 className='client-name'>{client.attributes.name}</h3>
+                <p className='client-p'>
+                  <a
+                    href={`mailto:${client.attributes.email}`}
+                    className='email-content-a'
+                  >
+                    {client.attributes.email}
+                  </a>
+                </p>
                 <Link
-                  className="clients-profile-btn"
+                  className='client-content-btn'
                   to={{ pathname: `/clients/${client.id}` }}
                 >
                   View
                 </Link>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </main>
       </div>
-    </div>
+    </section>
   );
 };
 

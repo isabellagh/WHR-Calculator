@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
 /* Global Styles */
-.App {
-  font-family: "Roboto", sans-serif;
+/* .App {
+  font-family: "Roboto", sans-serif; */
   /* font-size: 1rem; */
   /* line-height: 1.6; */
-  background-color: rgb(224, 223, 230);
+  /* background-color: rgb(224, 223, 230);
   position:absolute; 
     height:100%; 
     width:100%;
@@ -31,32 +31,32 @@ img-centered {
   margin-right: auto;
   width: 50%;
 
-}
+} */
 
-.App-header {
+/* .App-header { */
   /* background-color: #282c34; */
   /* min-height: 100vh; */
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   /* align-items: center; */
   /* justify-content: center; */
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   /* color: white; */
-}
+/* }
 .justify-content-center {
   -ms-flex-pack: center !important;
   justify-content: center !important;
-}
+} */
 /* 
 .wall {
   background-color: rgb(237, 240, 230);
 } */
 
-.nav {
+/* .nav {
   display: flex;
   flex-direction: row;
   color: blue;
-}
+} */
 
 /* html, body { */
   /* background-color: rgb(224, 223, 230); */
@@ -68,7 +68,7 @@ img-centered {
   /* text-align: center; */
 /* } */
 
-.box{
+/* .box{
   box-sizing: border-box;
   border: 3px solid transparent;
   background-clip:padding-box;
@@ -114,24 +114,24 @@ ul {
 
 img {
   width: 100%;
-}
+} */
 
 /* Utilities */
-.container {
+/* .container {
   max-width: 100px;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  width: 100%;
+  width: 100%; */
   /* background-color: rgb(237, 240, 230); */
-}
+/* }
 .center-div{
   margin: 0 auto;
-  width:100% /* value of your choice which suits your alignment */
-}
+  width:100%  value of your choice which suits your alignment 
+} */
 
 /* Text Styles*/
-.x-large {
+/* .x-large {
   font-size: 4rem;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -178,10 +178,10 @@ img {
 
 .text-left {
   text-align: left;
-}
+} */
 
 /* Center All */
-.all-center {
+/* .all-center {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -189,26 +189,26 @@ img {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
+} */
 
 /* Cards */
-.card {
+/* .card {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
-}
+} */
 
 /* List */
-.list {
+/* .list {
   margin: 0.5rem 0;
 }
 
 .list li {
   padding-bottom: 0.3rem;
-}
+} */
 
 /* Padding */
-.p {
+/* .p {
   padding: 0.5rem;
 }
 .p-1 {
@@ -231,10 +231,10 @@ img {
 }
 .py-3 {
   padding: 3rem 0;
-}
+} */
 
 /* Margin */
-.m {
+/* .m {
   margin: 0.5rem;
 }
 .m-1 {
@@ -257,10 +257,10 @@ img {
 }
 .my-3 {
   margin: 3rem 0;
-}
+} */
 
 /* Grid */
-.grid-2 {
+/* .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
@@ -341,9 +341,9 @@ img {
 .alert-light {
   background: var(--light-color);
   color: #333;
-}
+} */
 
-.btn-dark,
+/* .btn-dark,
 .bg-dark,
 .badge-dark,
 .alert-dark {
@@ -365,9 +365,9 @@ img {
 .alert-success {
   background: var(--success-color);
   color: #fff;
-}
+} */
 
-.btn-white,
+/* .btn-white,
 .bg-white,
 .badge-white,
 .alert-white {
@@ -387,10 +387,10 @@ img {
 
 .round-img {
   border-radius: 50%;
-}
+} */
 
 /* Forms */
-input {
+/* input {
   margin: 1.2rem 0;
 }
 
@@ -426,10 +426,10 @@ table td {
 
 table th {
   background: var(--light-color);
-}
+} */
 
 /* Navbar */
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -456,10 +456,10 @@ table th {
 
 .navbar .welcome span {
   margin-right: 0.6rem;
-}
+} */
 
 /* Mobile Styles */
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .hide-sm {
     display: none;
   }
@@ -468,10 +468,10 @@ table th {
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
-  }
+  } */
 
   /* Text Styles */
-  .x-large {
+  /* .x-large {
     font-size: 3rem;
   }
 
@@ -481,10 +481,10 @@ table th {
 
   .lead {
     font-size: 1rem;
-  }
+  } */
 
   /* Navbar */
-  .navbar {
+  /* .navbar {
     display: block;
     text-align: center;
   }
@@ -492,5 +492,5 @@ table th {
   .navbar ul {
     text-align: center;
     justify-content: center;
-  }
-}
+  } */
+/* } */

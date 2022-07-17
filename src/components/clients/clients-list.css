@@ -1,4 +1,144 @@
-.clients-container {
+.link-a {
+  transition: all 0.5s;
+  text-decoration: none;
+  color: #fff;
+}
+
+.clients-img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.clients-list-section {
+  /* max-width: 1200px; */
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  background-image: linear-gradient(to right top, #097bea, #2f78da, #4074ca, #4b71ba, #526eab, #3b6da1, #286a95, #1c6787, #006272, #005c59, #15533e, #2b4926);
+  text-align: center;
+}
+
+.clients-list-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-clients {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin: 30px 15px 0px 15px;
+}
+
+@media (max-width: 600px) {
+  .main-clients {
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+  }
+}
+
+.clients-list-header {
+  width: 70%;
+  padding-top: 70px;
+  margin: 0 auto;
+}
+
+.clients-list-h1 {
+  margin: 0;
+  font-size: 50;
+  color: #fff;
+  font-weight: 500;
+}
+
+.clients-card {
+  position: relative;
+  overflow: hidden;
+  max-height: 300px;
+  height: 100%;
+  box-shadow: 0 2px 10px #ccc;
+  transition: all 0.5s;
+}
+
+@media (max-width: 600px) {
+  .clients-card {
+    height: 200px;
+    width: 200px;
+      grid-template-columns: 1fr 1fr;
+      margin: 10px 5px 0px 5px;
+  }
+}
+
+.clients-card:hover {
+  box-shadow: 0 2px 10px #ccc;
+  transition: all 0.5s;
+}
+
+.clients-card:hover img {
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+
+.client-content {
+  position: absolute;
+  left: 0;
+  bottom: -45px;
+  width: 100%;
+  color: #fff;
+  padding: 10px 5px;
+  background: linear-gradient(45deg, rgb(41, 21, 153) 0%, rgba(144,192,229,0.4) 100%);
+  transition: all 0.5s;
+}
+
+.client-content:hover {
+  bottom: 0;
+  transition: all 0.5s;
+}
+
+/* .email-content-a {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(227, 227, 235);
+}
+
+.email-content-a:hover {
+  text-decoration: underline;
+  color: #fff;
+} */
+
+.client-content-btn {
+  display: block;
+  padding: 5px 10px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  font-weight: 400; 
+  text-decoration: none;
+}
+
+.client-content-btn:hover {
+  background: rgb(96, 122, 171);
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+.client-name {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.client-p {
+  margin: 10px;
+  color: #fff;
+}
+
+
+
+
+
+/* .clients-container {
     height: 950px;
     display: flex;
     flex-direction: column;
@@ -71,5 +211,5 @@
   .btn-link {
     text-decoration: none;
     color: #010606;
-  }
+  } */
   

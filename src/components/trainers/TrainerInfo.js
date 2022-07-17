@@ -1,7 +1,9 @@
-import React from "react";
-import { connect } from "react-redux";
-// import './trainers-info.css'
-// import { Link } from 'react-router-dom'
+import React from 'react';
+import { connect } from 'react-redux';
+import './trainers-info.css';
+// import { Link } from 'react-router-dom';
+import { AiOutlineMail } from 'react-icons/ai';
+
 // import TrainersList from './TrainersList';
 
 const TrainerInfo = (props) => {
@@ -14,29 +16,32 @@ const TrainerInfo = (props) => {
   //attrubutes vanish after refreshing the page, fixed
 
   return (
-    <div className="trainers-container">
-      <div
-        class="trainers-wrapper"
-        style={{  }}
-      >
+    <div className='t-info-container'>
+      <div class='t-info-wrapper' style={{}}>
         <img
-          className="trainers-img"
+          className='t-info-img'
           src={user ? user.image : null}
-          style={{ width: "100%", height: "100%" }}
-          alt=""
+          alt={user ? user.image : null}
         />
-        <div className="trainers-card">
-          <div className="card-body">
-            <h2 className="card-title">{user ? user.name : null}</h2>
-            <p class="trainers-p">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <h5 className="trainers-h2">
-              Contact me here: {user ? user.email : null}
-            </h5>
-          </div>
+        <div className='t-info-card'>
+          <h1 className='t-info-h1'>{user ? user.name : null}</h1>
+          <p class='t-info-p'>
+            {user.name} holds a BS in Physical Education as well as a MS in
+            Exercise Science and Health Promotion. Is a Certified Strength and
+            Conditioning Specialist (CSCS).
+          </p>
+          <h5>
+            <a href={`mailto:${user.email}`} className='t-info-contact'>
+              <p className='ti-p'>Let's talk about your goals:</p>
+              <p className='ti-email'>
+                <i className='ti-icon'>
+                  <AiOutlineMail />
+                </i>
+                {user.email}
+              </p>
+            </a>
+            {/* Got a goal: {user ? user.email : null} */}
+          </h5>
         </div>
       </div>
     </div>

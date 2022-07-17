@@ -1,41 +1,68 @@
-import React, { Component } from "react";
-// import '../App.css'
-import { Link } from "react-router-dom";
-import './trainers-list.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './trainers-list.css';
+import { SiMinutemailer } from 'react-icons/si';
+// import SearchTrainer from "./SearchTrainer";
+
 class TrainersList extends Component {
   // console.log("props", props);
 
-  // state = 
+  // state =
   //   {count: 0}
- 
 
   render() {
     return (
-      <div className="trainers-container">
-        <h3 className="trainers-h1"> Meet our trainers</h3>
-        <div className="trainers-wrapper">
-          {this.props.users.map((user) => (
-            <div style={{ width: 250 }} key={user.id}>
-              <div className="trainers-card">
-                <img
-                  src={user.image}
-                  className="trainers-img"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <h5 className="trainers-h2">{user.name}</h5>
-                  <p className="trainers-p">{user.email}</p>
-                  <Link className="trainers-profile" to={{ pathname: `/trainers-profile/${user.id}` } }>
-                    View trainer's profile
-                  </Link>
+      <>
+        <section className='section-trainer'>
+          {/* <SearchTrainer /> */}
+
+          <div className='trainers-list-container'>
+            <header className='trainers-header'>
+              <h1 className='heading-1'> Meet our trainers</h1>
+              <p className='parag-info'>
+                Click on a trainer to get more information
+              </p>
+            </header>
+            <main className='main-trainers'>
+              {this.props.users.map((user) => (
+                <div className='trainers-card' key={user.id}>
+                  <img
+                    src={user.image}
+                    className='trainers-img'
+                    alt={user.name}
+                  />
+                  <div className='blog-content'>
+                    <h3 className='blog-content-h3'>
+                      {user.name}
+                      {/* <span className='blog-content-h3-span'>*****</span> */}
+                    </h3>
+                    <p className='parag-info'>
+                      <a
+                        href={`mailto:${user.email}`}
+                        className='email-content-a'
+                      >
+                        <i className='mail-icon'>
+                          <SiMinutemailer />
+                        </i>
+                        {user.email}
+                      </a>
+                    </p>
+                    <Link
+                      className='blog-content-btn'
+                      to={{ pathname: `/trainers-profile/${user.id}` }}
+                    >
+                      View Profile
+                    </Link>
+                  </div>
                 </div>
-                {/* <p>liked {this.state.count} times</p>
+              ))}
+            </main>
+
+            {/* <p>liked {this.state.count} times</p>
                 <button onClick={() => this.setState({count: this.state.count + 1})}>Click me</button> */}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        </section>
+      </>
     );
   }
 }

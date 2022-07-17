@@ -1,0 +1,120 @@
+.container-login {
+    /* margin-top: 80px; */
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* overflow: hidden; */
+    background-image: linear-gradient(to right top, #097bea, #2f78da, #4074ca, #4b71ba, #526eab, #3b6da1, #286a95, #1c6787, #006272, #005c59, #15533e, #2b4926);
+
+  }
+  
+  .forms-container{
+      margin-top: 100px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+  }
+  
+  form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .title-signin {
+      font-size: 2.5rem;
+      color: rgb(0, 0, 0);
+      margin-bottom: 10px;
+  }
+  
+  .input-field {
+      max-width: 380px;
+      width: 100%;
+      height: 55px;
+      background-color: #f0f0f0;
+      margin: 10px 0;
+      border-radius: 55px;
+      display: grid;
+      grid-template-columns: 15% 85%;
+      padding: 0 0.4rem;
+      position: relative;
+  }
+  
+  .input-field i {
+      text-align: center;
+      line-height: 55px;
+      color: #acacac;
+      font-size: 1.5rem;
+  }
+  
+  .input-field input {
+      background: none;
+      outline: none;
+      border: none;
+      line-height: 1;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #333;
+  }
+  
+  .input-field input:placeholder-shown {
+    color: #aaa;
+    font-weight: 500;
+  }
+  
+  .btn-login {
+      width: 150px;
+      height: 49px;
+      outline: none;
+      border: none;
+      border-radius: 48px;
+      background-color: #242528;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 10px 0;
+      transition: all 0.5s;
+  }
+  
+  .btn-login:hover {
+      background-color: #2861e8;
+      cursor: pointer;
+      background-color: white;
+      color: #242528;
+      font-size: 20px;
+      font-weight: 800;
+  }
+  
+  .social-icon {
+      height: 50px;
+      width: 80px;
+      background-color: #0542f7;
+      /* border: 2px solid rgb(240, 240, 244); */
+      margin: auto;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #57a2d6;
+      font-size: 2.1rem;
+      border-radius: 30px   ;
+      transition: all 0.5s;
+  }
+  
+  .social-icon:hover {
+      color: #0542f7;
+      background-color: #57a2d6;
+  }
+
+  .here {
+      color: #242528;
+      text-decoration: none;
+  }
+  .here:hover {
+      color: #580f0f;
+      font-weight: 500;
+  }

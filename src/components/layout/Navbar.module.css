@@ -1,12 +1,12 @@
-.header {
+/* .header {
   width: 100%;
   height: 4rem;
   background-color: #244064;
   position: sticky;
   top: 0;
   z-index: 10;
-  /* display: flex; */
-  /* justify-content: space-between; */
+  display: flex;
+  justify-content: space-between;
 }
 
 .header nav {
@@ -47,4 +47,4 @@
   transform: scale(1.02);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-}
+} */

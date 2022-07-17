@@ -1,24 +1,25 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import './profile.css';
 
 //! null attributes when page refreshed
 
 const Profile = (props) => (
-  <div className="container">
+  <div className='profile-container'>
     {/* {console.log("profile", props)} */}
-    <br />
-    <h1 className="text-center">
-      {props.currentUser && props.currentUser.attributes.name}
-    </h1>
-    <img
-      src={props.currentUser.attributes.image}
-      className="img-thumbnail"
-      style={{ width: "400px" }}
-      alt="..."
-    />
-    <h4 className="text-center">
-      {props.currentUser && props.currentUser.attributes.email}
-    </h4>
+    <div className='profile-wrapper'>
+      <h1 className='profile-h1'>
+        {props.currentUser && props.currentUser.attributes.name}
+      </h1>
+      <img
+        src={props.currentUser.attributes.image}
+        className='profile-img'
+        alt={props.currentUser.attributes.name}
+      />
+      <h4 className='profile-email'>
+        {props.currentUser && props.currentUser.attributes.email}
+      </h4>
+    </div>
   </div>
 );
 const mapStateToProps = (state) => {
